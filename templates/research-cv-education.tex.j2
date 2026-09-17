@@ -1,0 +1,35 @@
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%
+% GENERATED FILE -- do not edit directly.
+% Edit ../cv-data.yaml and this file's template
+% (../templates/research-cv-education.tex.j2), then run
+% `python3 generate_cvs.py` from the repo root.
+%-------------------------------------------------------------------------------
+\cvsection{Education}
+
+
+%-------------------------------------------------------------------------------
+%	CONTENT
+%-------------------------------------------------------------------------------
+\begin{cventries}
+\BLOCK{ for edu in education }
+  \cventry
+  {\VAR{edu.degree}} % Degree
+  {\VAR{edu.institution}} % Institution
+  {\VAR{edu.location_full}} % Location
+  {\VAR{edu.start} - \VAR{edu.end}} % Date(s)
+  {
+    \begin{cvitems} % Description(s) bullet points
+\BLOCK{ if edu.dissertation }
+      \item {Dissertation: ``\VAR{edu.dissertation.title}''\BLOCK{ if edu.dissertation.pdf_url } \ifshowcontent \href{\VAR{edu.dissertation.pdf_url}}{[\underline{pdf}]} \fi\BLOCK{ endif }}
+      \item {Advised by \href{\VAR{edu.advisor.url}}{\VAR{edu.advisor.name}}}
+\BLOCK{ elif edu.note }
+      \item {\VAR{edu.note}}
+\BLOCK{ endif }
+    \end{cvitems}
+  }
+
+\BLOCK{ endfor }
+%---------------------------------------------------------
+\end{cventries}

@@ -118,12 +118,12 @@
 
 %----------HEADING----------
 \begin{center}
-    \textbf{\LARGE \scshape Hyungtae Lim} \\ \vspace{1pt}
+    \textbf{\LARGE \scshape \VAR{personal.full_name}} \\ \vspace{1pt}
     \small
-    \href{mailto:shapelim@mit.edu}{\underline{shapelim@mit.edu}} $|$
-    \href{https://limhyungtae.github.io/hyungtae-lim/}{\underline{limhyungtae.github.io}} $|$
-    \href{https://linkedin.com/in/hyungtae-lim}{\underline{linkedin.com/in/hyungtae-lim}} $|$
-    \href{https://github.com/limhyungtae}{\underline{github.com/limhyungtae}}
+    \href{mailto:\VAR{personal.email}}{\underline{\VAR{personal.email}}} $|$
+    \href{\VAR{personal.homepage_url}}{\underline{\VAR{personal.homepage_display}}} $|$
+    \href{\VAR{personal.linkedin_url}}{\underline{linkedin.com/in/\VAR{personal.linkedin_id}}} $|$
+    \href{\VAR{personal.github_url}}{\underline{github.com/\VAR{personal.github_id}}}
 \end{center}
 
 
@@ -134,9 +134,9 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Programming}{: C++, Python, CUDA, CMake} \\
-     \textbf{Frameworks \& Tools}{: ROS/ROS2, PyTorch, OpenCV, Git, Docker} \\
-     \textbf{Research Areas}{: SLAM, 3D LiDAR, Point Cloud Registration, Ground Segmentation, Semantic Segmentation, Sensor Fusion, Deep Learning, Multi-Robot Mapping}
+     \textbf{Programming}{: \VAR{skills.programming | join(", ")}} \\
+     \textbf{Frameworks \& Tools}{: \VAR{skills.tools | join(", ")}} \\
+     \textbf{Research Areas}{: \VAR{skills.research_areas | join(", ")}}
     }}
  \end{itemize}
 
@@ -149,37 +149,20 @@
 %   e.g. "Mentored 5+ graduate researchers, contributing to 4+ published papers."
 \section{Experience}
   \resumeSubHeadingListStart
+\BLOCK{ for job in experience if job.industry }
 
     \resumeSubheading
-      {Postdoctoral Associate}{Apr. 2024 -- Present}
-      {SPARK Lab, MIT (Advisor: Prof. Luca Carlone)}{Cambridge, MA}
+      {\VAR{job.title}}{\VAR{job.start} -- \VAR{job.end}}
+      {\VAR{job.org}\BLOCK{ if job.advisor } (Advisor: \VAR{job.advisor.name})\BLOCK{ endif }}{\VAR{job.location_short}}
       \resumeItemListStart
-        \resumeItem{Reduced multi-session map inconsistency in city-scale environments by building a large-scale multi-robot SLAM system enabling real-time 3D mapping across 10+ robots and sessions.}
-        \resumeItem{Accelerated research output by mentoring 4+ graduate researchers, contributing to 4+ published papers on 3D perception and autonomous mapping.}
-        \resumeItem{Grew combined GitHub adoption to 4K+ stars by maintaining \href{https://github.com/MIT-SPARK/TEASER-plusplus}{TEASER++} \githubstars{2.1K}, \href{https://github.com/MIT-SPARK/Hydra}{Hydra} \githubstars{773}, \href{https://github.com/MIT-SPARK/KISS-Matcher}{KISS-Matcher} \githubstars{643}, \href{https://github.com/MIT-SPARK/VGGT-SLAM}{VGGT-SLAM} \githubstars{882}.}
+\BLOCK{ for bullet in job.resume_bullets }
+        \resumeItem{\VAR{bullet}}
+\BLOCK{ endfor }
+\BLOCK{ if job.resume_github_list }
+        \resumeItem{\VAR{job.resume_github_bullet_prefix} \VAR{job.resume_github_list}.}
+\BLOCK{ endif }
       \resumeItemListEnd
-
-    \resumeSubheading
-      {Postdoctoral Fellow}{Mar. 2023 -- Mar. 2024}
-      {Korea Advanced Institute of Science and Technology (KAIST) (Advisor: Prof. Hyun Myung)}{Daejeon, South Korea}
-      \resumeItemListStart
-        \resumeItem{Improved localization robustness in dynamic scenes by developing real-time LiDAR-inertial and visual SLAM pipelines, deployed on 3+ mobile robot platforms.}
-        \resumeItem{Reduced dynamic-object-induced map corruption by developing deep learning perception modules for moving object segmentation in crowded and unstructured environments.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Visiting Scholar}{Nov. 2022 -- Feb. 2023}
-      {StachnissLab, University of Bonn (Advisor: Prof. Cyrill Stachniss)}{Bonn, Germany}
-      \resumeItemListStart
-        \resumeItem{Cut dynamic-object artifacts in LiDAR maps by ${\sim}$90\% by building ERASOR2, an instance-aware removal system for static map building in urban scenes (RSS 2023).}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Research Intern}{Apr. 2022 -- Sep. 2022}
-      {NAVER LABS}{Gyeonggi-Do, Korea}
-      \resumeItemListStart
-        \resumeItem{Achieved robust global LiDAR registration tolerating up to 99\% outlier correspondences by developing Quatro, exploiting ground segmentation for reliable loop closure in degenerate urban environments (ICRA 2022 / IJRR 2023).}
-      \resumeItemListEnd
+\BLOCK{ endfor }
 
   \resumeSubHeadingListEnd
 
@@ -195,10 +178,9 @@
 \section{Selected Projects}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \href{https://github.com/MIT-SPARK/KISS-Matcher}{\textbf{KISS-Matcher}} \githubstars{643} \emph{ICRA 2025} $|$ Out-of-the-box fast and robust global point cloud registration for large-scale mapping. \\
-     \href{https://github.com/MIT-SPARK/VGGT-SLAM}{\textbf{VGGT-SLAM}} \githubstars{882} \emph{NeurIPS 2025} $|$ Dense real-time RGB SLAM on SL(4) manifold; globally consistent 3D reconstruction. \\
-     \href{https://github.com/url-kaist/patchwork-plusplus}{\textbf{Patchwork++}} \githubstars{842} \emph{IROS 2022} $|$ $>$100\,Hz LiDAR ground segmentation; deployed in AV and mobile robot production. \\
-     \href{https://github.com/LimHyungTae/ERASOR}{\textbf{ERASOR}} \githubstars{494} \emph{RA-L 2021} $|$ ${\sim}$94\% dynamic-object artifact removal, enabling long-term autonomous navigation. \\
+\BLOCK{ for repo in portfolio_repos }
+     \href{\VAR{repo.url}}{\textbf{\VAR{repo.name}}} \githubstars{\VAR{repo.stars_k or repo.stars}} \emph{\VAR{repo.venue}} $|$ \VAR{repo.portfolio_description} \\
+\BLOCK{ endfor }
      \href{https://github.com/your-org/project1}{\textbf{[e.g., Real-Time LiDAR SLAM System]}} $|$ \emph{[Category, Year]} -- Reduced [X] by [Y]\% in city-scale environments by [Z]; deployed on [N]+ platforms. \\
      \href{https://github.com/your-org/project2}{\textbf{[e.g., 3D Object Detection Pipeline]}} $|$ \emph{[Category, Year]} -- Improved [X] recall by [Y]\% by [Z], processing at [N]\,Hz on [hardware] (e.g., NVIDIA Orin).
     }}
@@ -209,7 +191,7 @@
 \section{Publications}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     10\texttt{+} first-author papers at top-tier robotics and AI venues: IEEE ICRA, RSS, IEEE RA-L, NeurIPS, IEEE/CVF ICCV, IJRR
+     \VAR{publications_summary.text}
     }}
  \end{itemize}
 
@@ -218,14 +200,7 @@
 \section{Honors \& Awards}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{2025} -- Outstanding Reviewer Award, IEEE ICRA'25 (5 awardees out of 7,641 reviewers) \\
-     \textbf{2024} -- RSS Pioneers 2024 (30 selected out of 202 candidates) \\
-     \textbf{2024} -- 1st Prize, HILTI SLAM Challenge, IEEE ICRA'24 \\
-     \textbf{2023} -- Best Paper Award, IEEE RA-L (5 of 1,100 papers) \\
-     \textbf{2023} -- 1st Prize, HILTI SLAM Challenge, IEEE ICRA'23 (63 international teams) \\
-     \textbf{2023} -- CES'23 Innovation Award (via technology transfer with HILLS Robotics) \\
-     \textbf{2022} -- 2nd Prize, HILTI SLAM Challenge, IEEE ICRA'22 \\
-     \textbf{2020} -- Student Best Paper Award, ICCAS
+     \VAR{industry_honors_text}
     }}
  \end{itemize}
 
@@ -235,15 +210,11 @@
 %  https://www.sweresume.app/articles/faang-resume-guide/)
 \section{Education}
   \resumeSubHeadingListStart
+\BLOCK{ for edu in education }
     \resumeSubheading
-      {Korea Advanced Institute of Science and Technology (KAIST)}{Daejeon, South Korea}
-      {Ph.D. in Electrical Engineering and Robotics Program}{Mar. 2020 -- Feb. 2023}
-    \resumeSubheading
-      {Korea Advanced Institute of Science and Technology (KAIST)}{Daejeon, South Korea}
-      {M.S. in Electrical Engineering and Robotics Program}{Mar. 2018 -- Feb. 2020}
-    \resumeSubheading
-      {Korea Advanced Institute of Science and Technology (KAIST)}{Daejeon, South Korea}
-      {B.S. in Mechanical Engineering}{Mar. 2013 -- Aug. 2018}
+      {\VAR{edu.institution}}{\VAR{edu.location_short}}
+      {\VAR{edu.degree}}{\VAR{edu.start} -- \VAR{edu.end}}
+\BLOCK{ endfor }
 
   \resumeSubHeadingListEnd
 

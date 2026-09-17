@@ -55,10 +55,10 @@
 % NOTE(hlim): Put your name, personal website, email, and one or two key links.
 % Keep the contact line short — 3 items max. Google Scholar is useful for
 % researchers; LinkedIn is useful for everyone. Pick what fits the role.
-\namesection{Hyungtae}{Lim}{
-  \urlstyle{same}\href{https://limhyungtae.github.io/hyungtae-lim/}{limhyungtae.github.io} |
-  \href{mailto:shapelim@mit.edu}{shapelim@mit.edu} |
-  \href{https://scholar.google.com/citations?user=S1A3nbIAAAAJ}{Google Scholar}
+\namesection{\VAR{personal.first_name}}{\VAR{personal.last_name}}{
+  \urlstyle{same}\href{\VAR{personal.homepage_url}}{\VAR{personal.homepage_display}} |
+  \href{mailto:\VAR{personal.email}}{\VAR{personal.email}} |
+  \href{\VAR{personal.googlescholar_url}}{Google Scholar}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -79,19 +79,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Skills}
 \subsection{Programming}
-C++ \textbullet{} Python \textbullet{} CUDA \textbullet{} CMake
+\VAR{skills.programming | join(" \\textbullet{} ")}
 \sectionsep
 
 \subsection{Frameworks \& Tools}
-ROS/ROS2 \textbullet{} PyTorch \textbullet{} OpenCV \textbullet{} Git \textbullet{} Docker
+\VAR{skills.tools | join(" \\textbullet{} ")}
 \sectionsep
 
 \subsection{Research}
-SLAM \textbullet{} 3D LiDAR \textbullet{} Point Cloud Registration \textbullet{} Ground Segmentation \textbullet{} Semantic Segmentation \textbullet{} Sensor Fusion \textbullet{} Deep Learning \textbullet{} Multi-Robot Mapping
+\VAR{skills.research_areas | join(" \\textbullet{} ")}
 \sectionsep
 
 \subsection{Languages}
-Korean (Native) \textbullet{} English (Fluent)
+\VAR{skills.languages | join(" \\textbullet{} ")}
 \sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -100,10 +100,10 @@ Korean (Native) \textbullet{} English (Fluent)
 % Scholar is optional — include it only if you have notable citations.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Links}
-Website:// \href{https://limhyungtae.github.io/hyungtae-lim/}{\bf limhyungtae.github.io} \\
-GitHub:// \href{https://github.com/limhyungtae}{\bf limhyungtae} \\
-LinkedIn:// \href{https://linkedin.com/in/hyungtae-lim}{\bf hyungtae-lim} \\
-Scholar:// \href{https://scholar.google.com/citations?user=S1A3nbIAAAAJ}{\bf Hyungtae Lim}
+Website:// \href{\VAR{personal.homepage_url}}{\bf \VAR{personal.homepage_display}} \\
+GitHub:// \href{\VAR{personal.github_url}}{\bf \VAR{personal.github_id}} \\
+LinkedIn:// \href{\VAR{personal.linkedin_url}}{\bf \VAR{personal.linkedin_id}} \\
+Scholar:// \href{\VAR{personal.googlescholar_url}}{\bf \VAR{personal.full_name}}
 \sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -120,14 +120,10 @@ Scholar:// \href{https://scholar.google.com/citations?user=S1A3nbIAAAAJ}{\bf Hyu
 \small{Projects others rely on, reflecting both coding quality and real-world impact.}
 \vspace{0.3cm}
 \begin{tightemize}
-\item \href{https://github.com/MIT-SPARK/KISS-Matcher}{\textbf{KISS-Matcher}} \githubstars{643} \\
-Out-of-the-box fast and robust global point cloud registration for large-scale mapping. (\textit{ICRA'25})
-\item \href{https://github.com/MIT-SPARK/VGGT-SLAM}{\textbf{VGGT-SLAM}} \githubstars{882} \\
-Dense real-time RGB SLAM on SL(4) manifold; globally consistent 3D reconstruction. (\textit{NeurIPS'25})
-\item \href{https://github.com/url-kaist/patchwork-plusplus}{\textbf{Patchwork++}} \githubstars{842} \\
-$>$100\,Hz LiDAR ground segmentation; deployed in AV and mobile robot production. (\textit{IROS'22})
-\item \href{https://github.com/LimHyungTae/ERASOR}{\textbf{ERASOR}} \githubstars{494} \\
-${\sim}$94\% dynamic-object artifact removal, enabling long-term autonomous navigation. (\textit{RA-L'21})
+\BLOCK{ for repo in portfolio_repos }
+\item \href{\VAR{repo.url}}{\textbf{\VAR{repo.name}}} \githubstars{\VAR{repo.stars_k or repo.stars}} \\
+\VAR{repo.portfolio_description} (\textit{\VAR{repo.venue_short}})
+\BLOCK{ endfor }
 \end{tightemize}
 \sectionsep
 
@@ -140,26 +136,19 @@ ${\sim}$94\% dynamic-object artifact removal, enabling long-term autonomous navi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Education}
 
-\subsection{Korea Advanced Institute of Science and Technology (KAIST)}
-\descript{Ph.D. in Electrical Engineering and Robotics Program}
-\location{Mar. 2020 -- Feb. 2023 | Daejeon, South Korea}
-Advisor: Prof. Hyun Myung \\
-Dissertation: Robust LiDAR SLAM for Autonomous Vehicles Leveraging Ground Segmentation
+\BLOCK{ for edu in education }
+\subsection{\VAR{edu.institution}}
+\descript{\VAR{edu.degree}}
+\location{\VAR{edu.start} -- \VAR{edu.end} | \VAR{edu.location_short}}
+\BLOCK{ if edu.dissertation }
+Advisor: \VAR{edu.advisor.name} \\
+Dissertation: \VAR{edu.dissertation.title}
+\BLOCK{ elif edu.note }
+\VAR{edu.note}
+\BLOCK{ endif }
 \sectionsep
 
-\subsection{Korea Advanced Institute of Science and Technology (KAIST)}
-\descript{M.S. in Electrical Engineering and Robotics Program}
-\location{Mar. 2018 -- Feb. 2020 | Daejeon, South Korea}
-Advisor: Prof. Hyun Myung \\
-Dissertation: Two-Stage Depth Prediction Using a 2D LiDAR and a Monocular Camera via Deep Learning
-\sectionsep
-
-\subsection{Korea Advanced Institute of Science and Technology (KAIST)}
-\descript{B.S. in Mechanical Engineering}
-\location{Mar. 2013 -- Aug. 2018 | Daejeon, South Korea}
-Listed on the Dean’s List in Mechanical Engineering, KAIST (GPA 4.23/4.3 for the semester) - Fall 2015
-\sectionsep
-
+\BLOCK{ endfor }
 \end{minipage}
 \hfill
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -190,42 +179,24 @@ Listed on the Dean’s List in Mechanical Engineering, KAIST (GPA 4.23/4.3 for t
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experience}
 
-\runsubsection{SPARK Lab, MIT}
-\descript{| Postdoctoral Associate}
-\location{Apr. 2024 -- Present | Cambridge, MA}
+\BLOCK{ for job in experience if job.industry }
+\runsubsection{\VAR{job.org}}
+\descript{| \VAR{job.title}}
+\location{\VAR{job.start} -- \VAR{job.end} | \VAR{job.location_short}}
+\BLOCK{ if loop.first }
 \vspace{0.3cm}
+\BLOCK{ endif }
 \begin{tightemize}
-\item Reduced multi-session map inconsistency in city-scale environments by building a large-scale multi-robot SLAM system enabling real-time 3D mapping across 10+ robots and sessions.
-\item Accelerated research output by mentoring 4+ graduate researchers, contributing to 4+ published papers on 3D perception and autonomous mapping.
-\item Grew combined GitHub adoption to 4K+ stars by maintaining \href{https://github.com/MIT-SPARK/TEASER-plusplus}{TEASER++} \githubstars{2.1K}, \href{https://github.com/MIT-SPARK/Hydra}{Hydra} \githubstars{773}, \href{https://github.com/MIT-SPARK/KISS-Matcher}{KISS-Matcher} \githubstars{643}, \href{https://github.com/MIT-SPARK/VGGT-SLAM}{VGGT-SLAM} \githubstars{882}.
+\BLOCK{ for bullet in job.resume_bullets }
+\item \VAR{bullet}
+\BLOCK{ endfor }
+\BLOCK{ if job.resume_github_list }
+\item \VAR{job.resume_github_bullet_prefix} \VAR{job.resume_github_list}.
+\BLOCK{ endif }
 \end{tightemize}
 \sectionsep
 
-\runsubsection{Korea Advanced Institute of Science and Technology (KAIST)}
-\descript{| Postdoctoral Fellow}
-\location{Mar. 2023 -- Mar. 2024 | Daejeon, South Korea}
-\begin{tightemize}
-\item Improved localization robustness in dynamic scenes by developing real-time LiDAR-inertial and visual SLAM pipelines, deployed on 3+ mobile robot platforms.
-\item Reduced dynamic-object-induced map corruption by developing deep learning perception modules for moving object segmentation in crowded and unstructured environments.
-\end{tightemize}
-\sectionsep
-
-\runsubsection{StachnissLab, University of Bonn}
-\descript{| Visiting Scholar}
-\location{Nov. 2022 -- Feb. 2023 | Bonn, Germany}
-\begin{tightemize}
-\item Cut dynamic-object artifacts in LiDAR maps by ${\sim}$90\% by building ERASOR2, an instance-aware removal system for static map building in urban scenes (RSS 2023).
-\end{tightemize}
-\sectionsep
-
-\runsubsection{NAVER LABS}
-\descript{| Research Intern}
-\location{Apr. 2022 -- Sep. 2022 | Gyeonggi-Do, Korea}
-\begin{tightemize}
-\item Achieved robust global LiDAR registration tolerating up to 99\% outlier correspondences by developing Quatro, exploiting ground segmentation for reliable loop closure in degenerate urban environments (ICRA 2022 / IJRR 2023).
-\end{tightemize}
-\sectionsep
-
+\BLOCK{ endfor }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     KEY RELEVANT PROJECTS
 %
@@ -266,7 +237,7 @@ Listed on the Dean’s List in Mechanical Engineering, KAIST (GPA 4.23/4.3 for t
 % If you have 3 or fewer papers, list them individually with a one-line description.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Publications}
-10\texttt{+} first-author papers at top-tier robotics and AI venues: IEEE ICRA, RSS, IEEE RA-L, NeurIPS, IEEE/CVF ICCV, IJRR
+\VAR{publications_summary.text}
 \sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -278,14 +249,7 @@ Listed on the Dean’s List in Mechanical Engineering, KAIST (GPA 4.23/4.3 for t
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Awards}
 \begin{tabular}{rl}
-2025 & Outstanding Reviewer Award, IEEE ICRA'25 (5 awardees out of 7,641 reviewers) \\
-2024 & RSS Pioneers 2024 (30 selected out of 202 candidates) \\
-2024 & 1st Prize, HILTI SLAM Challenge, IEEE ICRA'24 \\
-2023 & Best Paper Award, IEEE RA-L (5 of 1,100 papers) \\
-2023 & 1st Prize, HILTI SLAM Challenge, IEEE ICRA'23 (63 international teams) \\
-2023 & CES'23 Innovation Award (via technology transfer with HILLS Robotics) \\
-2022 & 2nd Prize, HILTI SLAM Challenge, IEEE ICRA'22 \\
-2020 & Student Best Paper Award, ICCAS \\
+\VAR{industry_honors_table}
 \end{tabular}
 \sectionsep
 

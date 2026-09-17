@@ -75,6 +75,38 @@ ______________________________________________________________________
 
 ______________________________________________________________________
 
+## :recycle: Keeping All Three CVs in Sync
+
+Your name, contact links, education, work history, honors, and open-source
+portfolio are the same facts no matter which template renders them — so they
+live in one place, [`cv-data.yaml`](cv-data.yaml), instead of being copy-pasted
+into three `.tex` files.
+
+**Workflow:**
+1. Edit [`cv-data.yaml`](cv-data.yaml) (new job, updated star count, a new award, a fixed date, etc.).
+2. Regenerate all three `.tex` files:
+   ```bash
+   python3 generate_cvs.py
+   ```
+3. Compile each CV as usual (`pdflatex`/`xelatex` in its own directory, as documented per template below).
+
+The generator (`generate_cvs.py`) renders the Jinja2 templates in `templates/`
+into `jakes-format/resume.tex`, `deedy-format/resume.tex`, `research-cv/cv.tex`,
+and `research-cv/cv/{education,work_experience,honors}.tex`. Those six files
+are marked `GENERATED FILE -- do not edit directly` at the top — edit the
+`.yaml` and the `.j2` templates instead, then regenerate.
+
+**What's *not* in the SSoT:** content unique to one template (research-cv's
+detailed grant list, publications/`ref.bib`, teaching, committees, etc.) stays
+hand-authored in its own file, since it isn't duplicated anywhere else. Each
+industry resume's "Selected/Key Relevant Projects" section still has a
+placeholder block meant to be customized per job application — that's
+intentionally not data-driven.
+
+Requires `pyyaml` and `jinja2` (`pip install pyyaml jinja2`).
+
+______________________________________________________________________
+
 ## :page_facing_up: Templates
 
 ### 1. Awesome-CV Format (`research-cv/`)

@@ -1,0 +1,288 @@
+# =============================================================================
+# Single source of truth for all three CV templates (jakes-format, deedy-format,
+# research-cv). Edit this file, then run `python3 generate_cvs.py` to regenerate
+# the .tex files. Content that is unique to one template (research-cv's detailed
+# grant list, publications, teaching, committees, etc.) is NOT here — it stays
+# hand-authored in its own file since it isn't duplicated anywhere else.
+# =============================================================================
+
+personal:
+  first_name: Hyungtae
+  last_name: Lim
+  full_name: Hyungtae Lim
+  email: shapelim@mit.edu
+  homepage_url: https://limhyungtae.github.io/hyungtae-lim/
+  homepage_display: limhyungtae.github.io
+  github_id: limhyungtae
+  github_url: https://github.com/limhyungtae
+  linkedin_id: hyungtae-lim
+  linkedin_url: https://linkedin.com/in/hyungtae-lim
+  googlescholar_id: S1A3nbIAAAAJ
+  googlescholar_url: https://scholar.google.com/citations?user=S1A3nbIAAAAJ
+  address: Cambridge, MA, USA
+  position: "Robotics Researcher{\\enskip\\cdotp\\enskip}Field Robotics Engineer"
+  quote: "``Towards Pervasive Robotics and Artificial Intelligence''"
+
+# Open-source repos. `portfolio_description` + `venue` mark the "core portfolio"
+# projects that appear in jakes/deedy's project sections and research-cv's
+# highlights; repos without them are only referenced inline (e.g. star badges
+# in experience bullets).
+repos:
+  - key: teaser
+    name: TEASER++
+    url: https://github.com/MIT-SPARK/TEASER-plusplus
+    stars: 2100
+    stars_k: "2.1K"
+    stars_comma: "2,100"
+  - key: hydra
+    name: Hydra
+    url: https://github.com/MIT-SPARK/Hydra
+    stars: 773
+  - key: kiss_matcher
+    name: KISS-Matcher
+    url: https://github.com/MIT-SPARK/KISS-Matcher
+    stars: 643
+    venue: "ICRA 2025"
+    venue_short: "ICRA'25"
+    portfolio_description: "Out-of-the-box fast and robust global point cloud registration for large-scale mapping."
+  - key: vggt_slam
+    name: VGGT-SLAM
+    url: https://github.com/MIT-SPARK/VGGT-SLAM
+    stars: 882
+    venue: "NeurIPS 2025"
+    venue_short: "NeurIPS'25"
+    portfolio_description: "Dense real-time RGB SLAM on SL(4) manifold; globally consistent 3D reconstruction."
+  - key: patchwork_pp
+    name: Patchwork++
+    url: https://github.com/url-kaist/patchwork-plusplus
+    stars: 842
+    venue: "IROS 2022"
+    venue_short: "IROS'22"
+    portfolio_description: "$>$100\\,Hz LiDAR ground segmentation; deployed in AV and mobile robot production."
+  - key: erasor
+    name: ERASOR
+    url: https://github.com/LimHyungTae/ERASOR
+    stars: 494
+    venue: "RA-L 2021"
+    venue_short: "RA-L'21"
+    portfolio_description: "${\\sim}$94\\% dynamic-object artifact removal, enabling long-term autonomous navigation."
+  - key: patchwork
+    name: Patchwork
+    url: https://github.com/LimHyungTae/patchwork
+    stars: 555
+  - key: bufferx
+    name: BUFFER-X
+    url: https://github.com/MIT-SPARK/BUFFER-X
+    stars: 243
+
+skills:
+  programming: [C++, Python, CUDA, CMake]
+  tools: [ROS/ROS2, PyTorch, OpenCV, Git, Docker]
+  research_areas: [SLAM, 3D LiDAR, Point Cloud Registration, Ground Segmentation, Semantic Segmentation, Sensor Fusion, Deep Learning, Multi-Robot Mapping]
+  languages: [Korean (Native), English (Fluent)]
+
+education:
+  - degree: Ph.D. in Electrical Engineering and Robotics Program
+    institution: Korea Advanced Institute of Science and Technology (KAIST)
+    location_full: Daejeon, Republic of Korea
+    location_short: Daejeon, South Korea
+    start: Mar. 2020
+    end: Feb. 2023
+    advisor: {name: Prof. Hyun Myung, url: "https://urobot.kaist.ac.kr/url_teams/prof-hyunmyung/"}
+    dissertation: {title: "Robust LiDAR SLAM for Autonomous Vehicles Leveraging Ground Segmentation", pdf_url: "https://www.dropbox.com/s/0j64sbsrhpyjdgm/hyungtae_lim_dissertation.pdf?dl=0"}
+  - degree: M.S. in Electrical Engineering and Robotics Program
+    institution: Korea Advanced Institute of Science and Technology (KAIST)
+    location_full: Daejeon, Republic of Korea
+    location_short: Daejeon, South Korea
+    start: Mar. 2018
+    end: Feb. 2020
+    advisor: {name: Prof. Hyun Myung, url: "https://urobot.kaist.ac.kr/url_teams/prof-hyunmyung/"}
+    dissertation: {title: "Two-Stage Depth Prediction Using a 2D LiDAR and a Monocular Camera via Deep Learning"}
+  - degree: B.S. in Mechanical Engineering
+    institution: Korea Advanced Institute of Science and Technology (KAIST)
+    location_full: Daejeon, Republic of Korea
+    location_short: Daejeon, South Korea
+    start: Mar. 2013
+    end: Aug. 2018
+    note: "Listed on the Dean’s List in Mechanical Engineering, KAIST (GPA 4.23/4.3 for the semester) - Fall 2015"
+
+# `industry` = shown on jakes/deedy resumes. `resume_bullets` is the single
+# wording used by BOTH jakes and deedy (previously they'd drifted apart).
+# `cv_bullets` is research-cv's own, more granular task description.
+experience:
+  - title: Postdoctoral Associate
+    org: SPARK Lab, MIT
+    location_full: Massachusetts, the U.S.
+    location_short: Cambridge, MA
+    start: Apr. 2024
+    end: Present
+    industry: true
+    advisor: {name: Prof. Luca Carlone, url: "https://lucacarlone.mit.edu/"}
+    resume_bullets:
+      - "Reduced multi-session map inconsistency in city-scale environments by building a large-scale multi-robot SLAM system enabling real-time 3D mapping across 10+ robots and sessions."
+      - "Accelerated research output by mentoring 4+ graduate researchers, contributing to 4+ published papers on 3D perception and autonomous mapping."
+    resume_github_bullet_prefix: "Grew combined GitHub adoption to 4K+ stars by maintaining"
+    resume_github_repos: [teaser, hydra, kiss_matcher, vggt_slam]
+    cv_bullets:
+      - "Advised by \\href{https://lucacarlone.mit.edu/}{Prof. Luca Carlone}."
+      - "Conduct research on multi-robot/-session autonomous mapping algorithms in complex urban environments."
+      - "Guide and supervise graduate and undergraduate students in their research papers and thesis projects."
+
+  - title: Postdoctoral Fellow
+    org: Korea Advanced Institute of Science and Technology (KAIST)
+    org_short: Urban Robotics Lab, KAIST
+    location_full: Daejeon, Republic of Korea
+    location_short: Daejeon, South Korea
+    start: Mar. 2023
+    end: Mar. 2024
+    industry: true
+    advisor: {name: Prof. Hyun Myung, url: "https://urobot.kaist.ac.kr/url_teams/prof-hyunmyung/"}
+    resume_bullets:
+      - "Improved localization robustness in dynamic scenes by developing real-time LiDAR-inertial and visual SLAM pipelines, deployed on 3+ mobile robot platforms."
+      - "Reduced dynamic-object-induced map corruption by developing deep learning perception modules for moving object segmentation in crowded and unstructured environments."
+    cv_bullets:
+      - "Advised by \\href{https://urobot.kaist.ac.kr/url_teams/prof-hyunmyung/}{Prof. Hyun Myung}."
+      - "Conducted research on localization and mapping techniques using LiDAR and vision data, respectively."
+      - "Developed deep learning models for robust perception."
+      - "Guided and supervised graduate and undergraduate students in their research papers and thesis projects."
+
+  - title: Outside Expert of the CTO Division of LG Electronics Co. Ltd.
+    org: LG Electronics Co. Ltd.
+    location_full: Republic of Korea
+    location_short: Republic of Korea
+    start: Mar. 2022
+    end: Feb. 2023
+    industry: false
+    cv_bullets:
+      - "Introduced state-of-the-art SLAM technologies and provided insights into future technological directions for mobile robots."
+      - "Delivered a lecture entitled \\textit{``Introduction to the latest SLAM technology trends and Semantic SLAM.''}"
+
+  - title: Visiting Scholar
+    org: StachnissLab, University of Bonn
+    location_full: Bonn, Germany
+    location_short: Bonn, Germany
+    start: Nov. 2022
+    end: Feb. 2023
+    industry: true
+    advisor: {name: Prof. Cyrill Stachniss, url: "https://www.ipb.uni-bonn.de/people/cyrill-stachniss/index.html"}
+    resume_bullets:
+      - "Cut dynamic-object artifacts in LiDAR maps by ${\\sim}$90\\% by building ERASOR2, an instance-aware removal system for static map building in urban scenes (RSS 2023)."
+    cv_bullets:
+      - "After defending my dissertation, I visited Prof. Cyrill Stachniss' lab."
+      - "Worked on an improved version of static map building."
+      - "Submitted and had a paper accepted at RSS 2023 titled \\textit{ERASOR2}."
+
+  - title: Research Intern
+    org: NAVER LABS
+    location_full: Gyeonggi-Do, Republic of Korea
+    location_short: Gyeonggi-Do, Korea
+    start: Apr. 2022
+    end: Sep. 2022
+    industry: true
+    resume_bullets:
+      - "Achieved robust global LiDAR registration tolerating up to 99\\% outlier correspondences by developing Quatro, exploiting ground segmentation for reliable loop closure in degenerate urban environments (ICRA 2022 / IJRR 2023)."
+    cv_bullets:
+      - "Served as a Ph.D. research intern."
+      - "Worked on robust global registration using 3D point cloud data captured by the LiDAR sensor."
+      - "Submitted and accepted a paper to IEEE ICRA 2022."
+      - "Relevant code: \\href{https://github.com/url-kaist/Quatro}{\\texttt{https://github.com/url-kaist/Quatro}}."
+
+publications_summary:
+  text: "10\\texttt{+} first-author papers at top-tier robotics and AI venues: IEEE ICRA, RSS, IEEE RA-L, NeurIPS, IEEE/CVF ICCV, IJRR"
+
+# Full honors/awards list. `industry_highlight` + `industry_line` control what
+# shows (and how) on the compressed jakes/deedy Honors & Awards section;
+# research-cv's honors.tex shows every entry, grouped by `category`.
+honors:
+  - year: 2025
+    title: "IEEE ICRA'25 Outstanding Reviewer Award"
+    event: "IEEE ICRA'25"
+    location: "Atlanta, USA"
+    category: international
+    industry_highlight: true
+    industry_line: "Outstanding Reviewer Award, IEEE ICRA'25 (5 awardees out of 7,641 reviewers)"
+  - year: 2024
+    title: "RSS Pioneer"
+    event: "RSS Pioneers 2024 Workshop, in \\textit{RSS'24}"
+    location: "Delft, Netherlands"
+    category: international
+    industry_highlight: true
+    industry_line: "RSS Pioneers 2024 (30 selected out of 202 candidates)"
+  - year: 2024
+    title: "1st Prize"
+    event: "HILTI SLAM Challenge in \\textit{IEEE ICRA'24}"
+    location: "Yokohama, Japan"
+    category: international
+    industry_highlight: true
+    industry_line: "1st Prize, HILTI SLAM Challenge, IEEE ICRA'24"
+  - year: 2023
+    title: "Best Paper Award"
+    event: "RiTA'23"
+    location: "Xian, China"
+    category: international
+    industry_highlight: false
+  - year: 2023
+    title: "Best Paper Award (among 1,100 papers, 5 papers are received)"
+    event: "IEEE RA-L"
+    location: "London, UK"
+    category: international
+    industry_highlight: true
+    industry_line: "Best Paper Award, IEEE RA-L (5 of 1,100 papers)"
+  - year: 2023
+    title: "1st Prize (among 63 teams)"
+    event: "HILTI SLAM Challenge in \\textit{IEEE ICRA'23}"
+    location: "London, UK"
+    category: international
+    industry_highlight: true
+    industry_line: "1st Prize, HILTI SLAM Challenge, IEEE ICRA'23 (63 international teams)"
+  - year: 2023
+    title: "CES Innovation Award"
+    event: "Consumer Technology Association (CES)"
+    location: "San Francisco, USA"
+    category: international
+    industry_highlight: true
+    industry_line: "CES'23 Innovation Award (via technology transfer with HILLS Robotics)"
+  - year: 2022
+    title: "2nd Cash Prize, 4th in Total"
+    event: "HILTI SLAM Challenge in \\textit{IEEE ICRA'22}"
+    location: "Philadelphia, USA"
+    category: international
+    industry_highlight: true
+    industry_line: "2nd Prize, HILTI SLAM Challenge, IEEE ICRA'22"
+  - year: 2020
+    title: "Student Best Paper Award"
+    event: "ICCAS"
+    location: "Busan, Republic of Korea"
+    category: international
+    industry_highlight: true
+    industry_line: "Student Best Paper Award, ICCAS"
+  - year: 2020
+    title: "Kim Sung-Bue Creative Activity Award"
+    event: "KAIST"
+    location: "Daejeon"
+    category: domestic
+    industry_highlight: false
+  - year: 2019
+    title: "Han Cheolhui Augustine Scholarship"
+    event: "EE, KAIST"
+    location: "Daejeon"
+    category: domestic
+    industry_highlight: false
+  - year: 2019
+    title: "1st Prize"
+    event: "Hitachi-LG LiDAR Application Competition"
+    location: "Seoul"
+    category: domestic
+    industry_highlight: false
+  - year: 2018
+    title: "Excellence Prize"
+    event: "Smart City Service and Start-Up Competition"
+    location: "Seoul"
+    category: domestic
+    industry_highlight: false
+  - year: 2015
+    title: "Dean's List"
+    event: "ME, KAIST"
+    location: "Daejeon"
+    category: domestic
+    industry_highlight: false

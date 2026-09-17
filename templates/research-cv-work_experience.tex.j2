@@ -1,0 +1,34 @@
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%
+% GENERATED FILE -- do not edit directly.
+% Edit ../cv-data.yaml and this file's template
+% (../templates/research-cv-work_experience.tex.j2), then run
+% `python3 generate_cvs.py` from the repo root.
+%-------------------------------------------------------------------------------
+\cvsection{Work Experience (Including Internship)}
+
+
+%-------------------------------------------------------------------------------
+%	CONTENT
+%-------------------------------------------------------------------------------
+\begin{cventries}
+
+%---------------------------------------------------------
+\BLOCK{ for job in experience }
+  \cventry
+    {\VAR{job.org_short or job.org}} % Job title
+    {\VAR{job.title}} % Organization
+    {\VAR{job.location_full}} % Location
+    {\VAR{job.start} - \VAR{job.end}} % Date(s)
+    {
+      \begin{cvitems} % Description(s) of tasks/responsibilities
+\BLOCK{ for bullet in job.cv_bullets }
+        \item \VAR{bullet}
+\BLOCK{ endfor }
+      \end{cvitems}
+    }
+
+\BLOCK{ endfor }
+%---------------------------------------------------------
+\end{cventries}
