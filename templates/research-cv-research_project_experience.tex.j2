@@ -1,0 +1,44 @@
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%
+% GENERATED FILE -- do not edit directly.
+% Edit ../cv-data.yaml and this file's template
+% (../templates/research-cv-research_project_experience.tex.j2), then run
+% `python3 generate_cvs.py` from the repo root.
+%-------------------------------------------------------------------------------
+\cvsection{Research Project Experience}
+
+
+%-------------------------------------------------------------------------------
+%	CONTENT
+%-------------------------------------------------------------------------------
+\newcommand{\spark}{\href{\VAR{labs.spark.url}}{\VAR{labs.spark.name}}}
+\newcommand{\urban}{\href{\VAR{labs.urban.url}}{\VAR{labs.urban.name}}}
+\begin{cventries}
+\BLOCK{ for g in grants }
+\BLOCK{ if g.nickname }
+  % \VAR{g.nickname}
+\BLOCK{ else }
+%---------------------------------------------------------
+\BLOCK{ endif }
+  \cventry
+    {\VAR{g.funder}} % Job title
+    {\VAR{g.title}} % Organization
+\BLOCK{ if g.lab == "spark" }
+    {\spark} % Location
+\BLOCK{ elif g.lab == "urban" }
+    {\urban} % Location
+\BLOCK{ else }
+    {\VAR{g.location}} % Location
+\BLOCK{ endif }
+    {\VAR{g.dates}} % Date(s)
+    {
+      \begin{cvitems} % Description(s) of tasks/responsibilities
+\BLOCK{ for bullet in g.bullets }
+        \item \VAR{bullet}
+\BLOCK{ endfor }
+      \end{cvitems}
+    }
+
+\BLOCK{ endfor }
+\end{cventries}

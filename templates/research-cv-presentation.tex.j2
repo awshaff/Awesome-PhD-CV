@@ -1,0 +1,38 @@
+%-------------------------------------------------------------------------------
+%	CONTENT
+%
+% GENERATED FILE -- do not edit directly.
+% Edit ../cv-data.yaml and this file's template
+% (../templates/research-cv-presentation.tex.j2), then run
+% `python3 generate_cvs.py` from the repo root.
+%-------------------------------------------------------------------------------
+\begin{cventries}
+
+%---------------------------------------------------------
+\BLOCK{ for p in presentations }
+\BLOCK{ if p.enabled == false }
+  % \cventry
+  %   {\VAR{p.role}} % Role
+  %   {\VAR{p.event}} % Event
+  %   {\VAR{p.location}} % Location
+  %   {\VAR{p.date}} % Date(s)
+  %   {
+  %     \begin{cvitems} % Description(s)
+\BLOCK{ for bullet in p.bullets }
+  %       \item {\VAR{bullet}}
+\BLOCK{ endfor }
+  %     \end{cvitems}
+  %   }
+
+\BLOCK{ else }
+  \cventry
+    {\VAR{p.role}} % Role
+    {\VAR{p.event}} % Event
+    {\VAR{p.location}} % Location
+    {\VAR{p.date}} % Date(s)
+    {}
+
+\BLOCK{ endif }
+\BLOCK{ endfor }
+%---------------------------------------------------------
+\end{cventries}

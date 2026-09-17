@@ -1,9 +1,10 @@
 # =============================================================================
-# Single source of truth for all three CV templates (jakes-format, deedy-format,
-# research-cv). Edit this file, then run `python3 generate_cvs.py` to regenerate
-# the .tex files. Content that is unique to one template (research-cv's detailed
-# grant list, publications, teaching, committees, etc.) is NOT here — it stays
-# hand-authored in its own file since it isn't duplicated anywhere else.
+# Single source of truth for all CV content, across all three templates
+# (jakes-format, deedy-format, research-cv) AND content only research-cv
+# renders (grants, publications, teaching, committees, ...). Edit this file,
+# then run `python3 generate_cvs.py` to regenerate every .tex file listed in
+# generate_cvs.py's OUTPUTS map. research-cv/cv/ref.bib is the one exception
+# (see the comment above `publications:` below for why).
 # =============================================================================
 
 personal:
@@ -286,3 +287,404 @@ honors:
     location: "Daejeon"
     category: domestic
     industry_highlight: false
+
+# =============================================================================
+# Everything below is only consumed by research-cv today, but lives here too
+# (rather than staying hand-authored in cv/*.tex) so ALL of your CV content
+# has one home, per your call to keep it maximal rather than "only what's
+# duplicated." generate_cvs.py renders each section into its own
+# research-cv/cv/*.tex file.
+# =============================================================================
+
+labs:
+  spark:
+    name: SPARK Lab, MIT
+    url: https://mit.edu/sparklab/
+  urban:
+    name: Urban Robotics Lab., KAIST
+    url: https://urobot.kaist.ac.kr/
+
+# Research grants/funded projects (research-cv/cv/research_project_experience.tex).
+grants:
+- funder: Supported by National Research Foundation, Republic of Korea
+  title: Development of Harmonic-Space Operation Using Seamless Information Sharing Among Large-Scale Heterogeneous UVs
+  nickname: KETI-NRF Harmonic space
+  lab: spark
+  dates: Sep. 2024 - Current
+  bullets:
+  - Implemented multi-session LiDAR SLAM
+  - Studied semantic SLAM for heterogeneous robot platforms
+  - 'Keywords: 3D semantic mapping, Scene graph-based SLAM'
+- funder: Supported by National Research Foundation, Republic of Korea
+  title: Research on Certifiable Perception and Long-Term Metric-Semantic Mapping for Autonomous Vehicles
+  nickname: KETI-NRF Harmonic space
+  location: Postdoctoral Fellowship Program
+  dates: Sep. 2024 - Sep. 2025
+  bullets:
+  - Studied long-term metric-semantic mapping for mobile robots or autonomous vehicles
+  - 'Keywords: Metric-semantic mapping, Semantic SLAM'
+- funder: Supported by DCIST \& DevCom
+  title: Development of Scene Graph-Based Multi-Robot Multi-Session SLAM
+  nickname: Multi-robot by DCIST
+  lab: spark
+  dates: Apr. 2024 - Current
+  bullets:
+  - Implemented scene graph-based SLAM methods based on Hydra
+  - Ran semantic SLAM and enhanced the performance in our real-world campus scenes
+  - 'Keywords: 3D semantic mapping, Semantic SLAM'
+- funder: Supported by LG Electronics
+  title: Development of Semantic SLAM for Spatial AI
+  nickname: LG Semantic SLAM
+  lab: urban
+  dates: Apr. 2023 - Dec. 2023
+  bullets:
+  - Implemented deep learning-aided SLAM methods based on Hydra
+  - Ran semantic SLAM and enhanced the performance in our real-world campus scenes
+  - 'Keywords: 3D semantic mapping, Semantic SLAM'
+- funder: Supported by the Ministry of Trade, Industry \& Energy (MOTIE), Republic of Korea
+  title: Development of Artificial Intelligence Robot Autonomous Navigation Technology for Agile Movement in Crowded Space
+  nickname: 라스트마일
+  lab: urban
+  dates: Mar. 2020 - June 2023
+  bullets:
+  - Was in charge of dynamic object detection in order to generate static maps and perform moving-object-robust SLAM in dynamic environments
+  - 'Keywords: SLAM, 3D LiDAR, Static Map Building, OpenCV, C++, ROS'
+- funder: Supported by LG Electronics
+  title: Study of Semantic SLAM Towards Spatial AI Technologies
+  nickname: LG Semantic SLAM
+  lab: urban
+  dates: Mar. 2022 - Dec. 2022
+  bullets:
+  - Studied various deep learning-aided SLAM methods, such as Kimera and Hydra
+  - Run semantic SLAM in our real-world data to check the feasibility
+  - 'Keywords: 3D semantic mapping, Semantic SLAM'
+- funder: Supported by Hyundai Kefico
+  title: Deep Learning-Based Depth Prediction Using a Mono Camera and 2D LiDAR Sensor
+  nickname: 현대 케피코
+  lab: urban
+  dates: Mar. 2022 - Nov. 2022
+  bullets:
+  - Was in charge of the development of deep learning-based depth prediction
+  - Studied various calibration methods (2D LiDAR-to-camera, 3D LiDAR-to-IMU, camera-to-IMU)
+  - Ran deep learning models on NVIDIA Xavier
+  - 'Keywords: Real-time deep learning, Depth prediction, Calibration, PyTorch, OpenCV, C++, ROS'
+- funder: Supported by KAIST Institute for Security Convergence Research
+  title: A Study on the Visual Place Recognition in Multiple Photos
+  nickname: VPR
+  lab: urban
+  dates: Mar. 2020 - Dec. 2020
+  bullets:
+  - Studied visual place recognition application. Struggled to improve the performance of the SOTA deep learning-based VPR approaches
+  - 'Keywords: Visual place recognition, Deep learning, Semantic segmentation, Inpainting, Python, PyTorch'
+- funder: Supported by the Ministry of Trade, Industry \& Energy (MOTIE)
+  title: Development of Robot Intelligence Technology for Mobility with Learning Capability Toward Robust and Seamless Indoor and Outdoor Autonomous Navigation
+  nickname: 이동지능
+  lab: urban
+  dates: Mar. 2020 - Sep. 2020
+  bullets:
+  - Developed SLAM algorithm applied to mobile robots
+  - Was in charge of SLAM, static map building in low-dynamic environments, and movable area prediction
+  - 'Keywords: SLAM, 3D LiDAR, Registration, Static map building, Mobile robots, C++, ROS'
+- funder: Supported by Samsung Electronics Co., Ltd.
+  title: Indoor Navigation of Mobile Robots using Deep Learning-based Object Recognition
+  lab: urban
+  dates: Jan. 2019 - Sep. 2019
+  bullets:
+  - Developed SLAM and perception algorithms applied to robot cleaners for achieving robust navigation in indoor environments
+  - Was in charge of depth prediction using a 2D LiDAR sensor and a monocular camera for collision avoidance of mobile robots via deep learning
+  - 'Keywords: 2D LiDAR, Sensor Fusion, Deep Learning, Mobile Robots, PyTorch, ROS'
+- funder: Supported by IITP, which is a government-affiliated organization
+  title: 'IITP Artificial Intelligence R\&D Grand Challenge: Track 4, Intelligent Control'
+  lab: urban
+  dates: Jan. 2019 - Jun. 2019
+  bullets:
+  - Was in charge of the task of a drone passing through windows
+  - Implemented RGB-D camera-based path planning\&following. Participated in applying VIO to estimate the odometry of UAV
+  - 'Keywords: VIO, Path planning and following, Projective geometry, OpenCV, ROS'
+- funder: Outsourced by Pixoneer Geomatics and Agency for Defense Development
+  title: Machine Learning-Based Classification of Small Object Captured by Unmanned Aerial Vehicle
+  lab: urban
+  dates: Jan. 2018 - Dec. 2019
+  bullets:
+  - Developed both SVM-based and Deep Learning-based classification algorithms
+  - Implemented HOG-LBP for input to SVM and engaged in designing novel Deep Learning architecture.
+  - 'Keywords: Deep Learning, SVM, HOG-LBP, Classification, Python, PyTorch'
+- funder: Supported by Ministry of Trade, Industry, and Energy
+  title: Range-Only SLAM in Complex Disaster Situation
+  lab: urban
+  dates: Jan. 2018 - Dec. 2018
+  bullets:
+  - Implemented Monte Carlo localization (MCL) using range measurements by ultra-wideband (UWB) sensors for UAV from scratch single-handed
+  - Struggled to cover Non-line-of-sight (NLOS) issues.
+  - 'Keywords: MCL, Beacon-based localization, UWB sensors, NLOS, ROS'
+# Teaching experience (research-cv/cv/teaching.tex).
+teaching:
+- role: Guest Lecturer for six weeks to teach basic knowledge of visual SLAM
+  course: '[CTP445] Augmented Reality (Lecturer: Prof. Woontack Woo)'
+  department: Minor Program in Culture Technology, KAIST
+  term: Spring, 2023
+- role: Teaching assistant
+  course: '[EE581] Linear Systems (Lecturer: Prof. Donghwan Lee)'
+  department: Electrical Engineering, KAIST
+  term: Spring, 2022
+- role: Teaching assistant
+  course: '[EE585] Mobile Robotics and Autonomous Navigation (Lecturer: Prof. Hyun Myung)'
+  department: Electrical Engineering, KAIST
+  term: Fall, 2021
+- role: Teaching assistant
+  course: '[EE581] Linear Systems (Lecturer: Prof. Donghwan Lee)'
+  department: Electrical Engineering, KAIST
+  term: Spring, 2021
+- role: Teaching assistant
+  course: '[EE688] Optimal Control Theory (Lecturer: Prof. Donghwan Lee)'
+  department: Electrical Engineering, KAIST
+  term: Fall, 2020
+- role: Teaching assistant
+  course: '[EE305] Introduction to Electronics Design Lab (Lecturer: Prof. Dongho Cho)'
+  department: Electrical Engineering, KAIST
+  term: Spring, 2020
+- role: Teaching assistant
+  course: '[CE208] IT in Construction Engineering (Lecturer: Prof. Hyun Myung)'
+  department: Civil Engineering, KAIST
+  term: Fall, 2018
+- role: Teaching assistant
+  course: '[CE558] Introduction to Civil Robotics (Lecturer: Prof. Hyun Myung)'
+  department: Civil Engineering, KAIST
+  term: Spring, 2018
+# Academic services / committee & reviewer roles (research-cv/cv/committees.tex).
+committees:
+- position: Program committee
+  committee: RSS Pioneer'2025 Workshop committee
+  location: USA
+  date: '2025'
+- position: Associate Editor
+  committee: IEEE Robot. Automat. Lett. (RA-L)
+  location: ''
+  date: 2024--
+- position: Reviewer
+  committee: RA-L, T-RO, IJRR, IROS, ICRA, CVPR, NeurIPS
+  location: ''
+  date: '2025'
+- position: Reviewer
+  committee: RA-L, T-RO, IJRR, IROS, ICRA, CVPR
+  location: ''
+  date: '2024'
+- position: Reviewer
+  committee: RA-L, T-RO, IJRR, IROS, ICRA
+  location: ''
+  date: '2023'
+# -----------------------------------------------------------------------------
+# certificates / presentations / writing / research_cv_skills below are
+# migrated verbatim from cv/certificates.tex, cv/presentation.tex,
+# cv/writing.tex, cv/skills.tex. FLAG: all four of those \input lines are
+# already commented out in cv.tex, and their content (AWS/Kubernetes/
+# Terraform certs, a 2012 DEFCON talk, a 2012-2015 dev blog, a DevOps/
+# Node.js/React skill list) doesn't match the robotics-researcher narrative
+# in the rest of this file -- it looks like unmodified example content
+# carried over from the upstream posquit0/Awesome-CV template. Kept here
+# verbatim since it's real data that existed in the repo, but worth
+# confirming whether to keep, edit, or delete outright.
+# -----------------------------------------------------------------------------
+certificates:
+- name: AWS Certified Security - Specialty
+  issuer: Amazon Web Services (AWS)
+  credential_id: ''
+  date: '2022'
+- name: AWS Certified Solutions Architect – Professional
+  issuer: Amazon Web Services (AWS)
+  credential_id: ''
+  date: '2022'
+- name: AWS Certified Solutions Architect – Associate
+  issuer: Amazon Web Services (AWS)
+  credential_id: ''
+  date: '2019'
+- name: AWS Certified SysOps Administrator – Associate
+  issuer: Amazon Web Services (AWS)
+  credential_id: ''
+  date: '2021'
+- name: Certified Kubernetes Application Developer (CKAD)
+  issuer: The Linux Foundation
+  credential_id: ''
+  date: '2020'
+- name: 'HashiCorp Certified: Terraform Associate'
+  issuer: HashiCorp
+  credential_id: ''
+  date: '2020'
+presentations:
+# This one was commented out (disabled) in the original file -- kept here
+# for the record with enabled: false rather than dropped outright.
+- role: 'Presenter for <Hosting Web Application for Free utilizing GitHub, Netlify and CloudFlare>'
+  event: DevFest Seoul by Google Developer Group Korea
+  location: Seoul, S.Korea
+  date: Nov. 2017
+  enabled: false
+  bullets:
+    - Introduced the history of web technology and the JAM stack which is for the modern web application development.
+    - Introduced how to freely host the web application with high performance utilizing global CDN services.
+- role: 'Presenter for <DEFCON 20th : The way to go to Las Vegas>'
+  event: 6th CodeEngn (Reverse Engineering Conference)
+  location: Seoul, Republic of Korea
+  date: Jul. 2012
+- role: Presenter for <Metasploit 101>
+  event: 6th Hacking Camp - S.Korea
+  location: Seoul, Republic of Korea
+  date: Sep. 2012
+writing:
+- role: Founder \& Writer
+  title: A Guide for Developers in Start-up
+  location: Facebook Page
+  dates: Jan. 2015 - PRESENT
+  bullets:
+  - Drafted daily news for developers in Korea about IT technologies, issues about start-up.
+- role: Undergraduate Student Reporter
+  title: AhnLab
+  location: S.Korea
+  dates: Oct. 2012 - Jul. 2013
+  bullets:
+  - Drafted reports about IT trends and Security issues on AhnLab Company magazine.
+research_cv_skills:
+- category: DevOps
+  items:
+  - AWS
+  - Docker
+  - Kubernetes
+  - Rancher
+  - Vagrant
+  - Packer
+  - Terraform
+  - Jenkins
+  - CircleCI
+- category: Back-end
+  items:
+  - Koa
+  - Express
+  - Django
+  - REST API
+- category: Front-end
+  items:
+  - Hugo
+  - Redux
+  - React
+  - HTML5
+  - LESS
+  - SASS
+- category: Programming
+  items:
+  - Node.js
+  - Python
+  - JAVA
+  - OCaml
+  - LaTeX
+- category: Languages
+  items:
+  - Korean
+  - English
+  - Japanese
+# Publications actually rendered in research-cv (cv/publication_conf.tex,
+# cv/publication_journals.tex), each stored as the raw formatted LaTeX line
+# that already existed. NOTE: cv/ref.bib is a separate, older, and now-stale
+# duplicate of some of this list (dead code -- both \bibliographystyle and
+# \nobibliography are commented out in cv.tex, and the entries disagree with
+# the list below, e.g. Quatro++ is "submitted" there but published here).
+# Left untouched rather than reconciled since nothing renders it; worth a
+# decision on whether to delete it.
+publications:
+  journals:
+  - |-
+    \underline{\hyungtaelim}, \underline{Minkyun Seo}, Luca Carlone, and Jaesik Park, ``Towards Zero-Shot Point Cloud Registration Across Diverse Scales, Scenes, and Sensor Setups,'' in \textit{IEEE Trans. Pattern Anal. Mach. Intell. (T-PAMI)}, 2026. \underreview
+  - |-
+    \underline{\hyungtaelim}, \underline{Daebeom Kim}, and Hyun Myung, ``Multi-Mapcher: Loop Closure Detection-Free Heterogeneous LiDAR Multi-Session SLAM Leveraging Outlier-Robust Registration for Autonomous Vehicles,'' \textit{IEEE Trans. Intell. Veh. (T-IV)}, vol.~11, no.~2, pp. 338--351, 2026
+  - |-
+    I Nahrendra, Byeongho Yu, Minho Oh, Dongkyu Lee, Seunghyun Lee, Hyeonwoo Lee, \hyungtaelim, and Hyun Myung, ``Obstacle-Aware Quadrupedal Locomotion With Resilient Multi-Modal Reinforcement Learning,'' \textit{IEEE Trans. Robot. (T-RO)}, vol.~42, pp.~819--836, 2026.
+  - |-
+    Kevin Christiansen Marsim, Minho Oh, Byeongho Yu, Seungjae Lee, I Made Aswin Nahrendra, \hyungtaelim, and Hyun Myung, ``LVI-Q: Robust LiDAR-Visual-Inertial-Kinematic Odometry for Quadruped Robots Using Tightly-Coupled and Efficient Alternating Optimization,'' \textit{IEEE Robot. Automat. Lett. (RA-L)}, vol.~10, no.~10, pp. 10050--10057, 2025.
+  - |-
+    Daehan Lee, \hyungtaelim, and Soohee Han, ``GenZ-ICP: Generalizable and Degeneracy-Robust LiDAR Odometry Using an Adaptive Weighting,'' \textit{IEEE Robot. Automat. Lett. (RA-L)}, vol. 10, no. 1, pp. 152--159, Nov. 14, 2024.
+  - |-
+    Seungwon Song, \hyungtaelim, Alex Junho Lee, and Hyun Myung, ``DynaVINS++: Robust Visual-Inertial State Estimator in Dynamic Environments by Adaptive Truncated Least Squares and Stable State Recovery,'' \textit{IEEE Robot. Automat. Lett. (RA-L)}, vol. 9, no. 10, pp. 9127--9134, Sep. 6, 2024.
+  - |-
+    {DongKi Noh, \hyungtaelim, Gyuho Eoh, Duckyu Choi, Jeong-Sik Choi, Hyunjun Lim, Seung-Min Baek, and Hyun Myung, ``CLOi-Mapper: Consistent, Lightweight, Robust, and Incremental Mapper With Embedded Systems for Commercial Robot Services,'' \textit{IEEE Robot. Automat. Lett. (RA-L)}, vol. 9, no. 9, pp. 7541--7548, Jul. 15, 2024}.
+  - |-
+    {{\hyungtaelim}, Minho Oh, Seungjae Lee, Seunguk Ahn, and Hyun Myung, ``Similar but Different: A Survey of Ground Segmentation and Traversability Estimation for Terrestrial Robots,'' \textit{Int. J. Control, Automat. Syst. (IJCAS)}, vol. 22, pp. 347--359, Feb. 1, 2024}.
+  - |-
+    {{\hyungtaelim}, Beomsoo Kim, Daebeom Kim, Eungchang Mason Lee, and Hyun Myung, ``Quatro++: Robust Global Registration Exploiting Ground Segmentation for Loop Closing in LiDAR SLAM,'' \textit{Int. J. Robot. Res. (IJRR)}, vol.~43, no.~5, pp. 685--715, Nov. 2, 2023}.
+  - |-
+    Alex Junho Lee, Seungwon Song, \hyungtaelim, Wooju Lee, and Hyun Myung, ``$(LC)^2$: LiDAR-Camera Loop Constraints For Cross-Modal Place Recognition,'' \textit{IEEE Robot. Automat. Lett. (RA-L)}, vol. 8, no. 6, pp. 3589--3596, Apr. 20, 2023.
+  - |-
+    DongKi Noh, Changki Sung, Teayoung Uhm, Wooju Lee, \hyungtaelim, Jaeseok Choi, Kyuewang Lee, Dasol Hong, Daeho Um, Inseop Chung, Hochul Shin, MinJung Kim, Hyoung-Rock Kim, SeungMin Baek, and Hyun Myung, ``X-MAS: Extremely Large-Scale Multi-Modal Sensor Dataset for Outdoor Surveillance in Real Environments,'' \textit{IEEE Robot. Automat. Lett. (RA-L)}, vol. 8, no. 2, pp. 1093--1100, Jan. 12, 2023.
+  - |-
+    Seungwon Song, \hyungtaelim, Alex Junho Lee, and Hyun Myung, ``DynaVINS: A Visual-Inertial SLAM for Dynamic Environments,'' \textit{IEEE Robot. Automat. Lett. (RA-L)}, vol. 7, no. 4, pp. 11523--11530, Oct. 31, 2022.
+  - |-
+    \underline{Minho Oh}, \underline{Euigon Jung}, \hyungtaelim, Wonho Song, Sumin Hu, Eungchang Mason Lee, Junghee Park, Jaekyung Kim, Jangwoo Lee, and Hyun Myung, ``TRAVEL: Traversable Ground and Above-Ground Object Segmentation Using Graph Representation of 3D LiDAR Scans,'' \textit{IEEE Robot. Automat. Lett. (RA-L)}, vol. 7, no. 3, pp. 7255--7262, Jun. 13, 2022. \textbf{Won 2022 IEEE RA-L Best Paper Award}.
+  - |-
+    Seungwon Song, \hyungtaelim, and Hyun Myung, ``G2P-SLAM: Generalized RGB-D SLAM Framework for Mobile Robots in Low-Dynamic Environments,'' \textit{IEEE Access}, vol. 10, pp. 21370--21383, Feb. 11, 2022.
+  - |-
+    Changki Sung, Seulgi Jeon, \hyungtaelim, and Hyun Myung, ``What If There Was No Revisit? Large-Scale Graph-based SLAM with Traffic Sign Detection in an HD Map Using LiDAR Inertial Odometry,'' \textit{J. Intell. Serv. Robot.}, pp. 1--10, Nov. 25, 2021.
+  - |-
+    \hyungtaelim, Hanseok Ryu, Matthew Rhudy, Dongjin Lee, Dongjin Jang, Changho Lee, Young-min Park, \underline{Wonkeun Youn}, and \underline{Hyun Myung}, ``Deep Learning-Aided Synthetic Airspeed Estimation of UAVs for Analytical Redundancy with a Temporal Convolutional Network,'' \textit{IEEE Robot. Automat. Lett. (RA-L)}, vol. 7, no. 1, pp. 17--24, Oct. 1, 2021.
+  - |-
+    \hyungtaelim, Minho Oh, and Hyun Myung, ``Patchwork: Concentric Zone-Based Region-Wise Ground Segmentation With Ground Likelihood Estimation Using a 3D LiDAR Sensor,'' \textit{IEEE Robot. Automat. Lett. (RA-L) with IROS}, vol. 6, no. 4, pp. 6458--6465, Jun. 28, 2021.
+  - |-
+    \underline{Wonkeun Youn}, \underline{\hyungtaelim}, Hyoung Sik Choi, Matthew B. Rhudy, Hyeok Ryu, Sungyug Kim, and Hyun Myung, ``State Estimation of HALE UAV With Deep Learning-Aided Virtual AOA/SSA Sensor for Analytical Redundancy,'' \textit{IEEE Robot. Automat. Lett. (RA-L)}, vol. 6, no. 3, pp. 5276--5283, Apr. 19, 2021.
+  - |-
+    \hyungtaelim, Sungwon Hwang, and Hyun Myung, ``ERASOR: Egocentric Ratio of Pseudo Occupancy-Based Dynamic Object Removal for Static 3D Point Cloud Map Building,'' \textit{IEEE Robot. Automat. Lett. (RA-L) with ICRA}, vol. 6, no. 2, pp. 2272--2279, Feb. 23, 2021.
+  conferences:
+  - |-
+    Junho Choi, Kihwan Ryoo, Jeewon Kim, Taeyun Kim, Eungchang Lee, Myeongwoo Jeong, Kevin Christiansen Marsim, \hyungtaelim, and Hyun Myung, ``SaWa-ML: Structure-Aware Pose Correction and Weight Adaptation-Based Robust Multi-Robot Localization,'' in \textit{Proc. IEEE/RSJ Int. Conf. Intell. Robot. Syst. (IROS)}, 2025. \accepted
+  - |-
+    \underline{Dominic Maggio}, \underline{\hyungtaelim}, and Luca Carlone, ``VGGT-SLAM: Dense RGB SLAM Optimized on the SL(4) Manifold,'' in \textit{Proc. Neural Information Processing Systems (NeurIPS)}, 2025. \accepted
+  - |-
+    \underline{Minkyun Seo}, \underline{\hyungtaelim}, Kanghee Lee, Luca Carlone, and Jaesik Park, ``BUFFER-X: Towards Zero-Shot Point Cloud Registration in Diverse Scenes,'' in \textit{Proc. IEEE/CVF Int. Conf. Comput. Vis. (ICCV)}, 2025, pp. 3851--3862.
+  - |-
+    \hyungtaelim, Daebeom Kim, Gunhee Shin, Jingnan Shi, Ignacio Vizzo, Hyun Myung, Jaesik Park, and Luca Carlone, ``KISS-Matcher: Fast and Robust Point Cloud Registration Revisited,'' in \textit{Proc. IEEE Int. Conf. Robot. Automat. (ICRA)}, Atlanta, U.S., May 19--23, 2025, pp. 11104--11111.
+  - |-
+    Kihwan Ryoo, \hyungtaelim, and Hyun Myung, ``MambaGlue: Fast and Robust Local Feature Matching With Mamba,'' in \textit{Proc. IEEE Int. Conf. Robot. Automat. (ICRA)}, Atlanta, U.S., May 19--23, 2025. \accepted
+  - |-
+    \underline{\hyungtaelim}, \underline{Seoyeon Jang}, Benedikt Mersch, Jens Behley, Hyun Myung, and Cyrill Stachniss, ``HeLiMOS: A Dataset for Moving Object Segmentation in 3D Point Clouds From Heterogeneous LiDAR Sensors,'' in \textit{Proc. IEEE/RSJ Int. Conf. Intell. Robot. Syst. (IROS)}, Abu Dhabi, UAE, Oct. 14--18, 2024.
+  - |-
+    Changki Sung, Wanhee Kim, Jungho An, Wooju Lee, \underline{\hyungtaelim}, and \underline{Hyun Myung}, ``Contextrast: Contextual Contrastive Learning for Semantic Segmentation,'' in \textit{Proc. IEEE/CVF Conf. Comput. Vis. Pattern Recognit. (CVPR)}, Seattle, U.S., Jun. 17--21, 2024, pp. 3732--3742.
+  - |-
+    Minho Oh, Gunhee Shin, Seoyeon Jang, Seungjae Lee, Dongkyu Lee, Wonho Song, Byeongho Yu, \hyungtaelim, Jaeyoung Lee, and Hyun Myung, ``B-TMS: Bayesian Traversable Terrain Modeling and Segmentation Across 3D LiDAR Scans and Maps for Enhanced Off-Road Navigation,'' in \textit{Proc. IEEE Intell. Veh. (IV)}, Jeju Island, Korea, Republic of, Jun. 2--5, 2024.
+  - |-
+    Wooju Lee, Dasol Hong, \underline{\hyungtaelim}, and \underline{Hyun Myung}, ``Object-Aware Domain Generalization for Object Detection,'' in \textit{Annual AAAI Conf. Artif. Intell. (AAAI)}, Vancouver, Canada, Feb. 20--27, 2024, pp. 2946--2955.
+  - |-
+    Seoyeon Jang, Minho Oh, Byeongho Yu, I Made Aswin Nahrendra, Seungjae Lee, \hyungtaelim, and Hyun Myung, ``TOSS: Real-time Tracking and Moving Object Segmentation for Static Scene Mapping,'' in \textit{Proc. Int. Conf. Robot Intell. Tech. Applications (RiTA)}, Xian, China, Dec. 6--8, 2023. \textbf{Received Best Paper Award}.
+  - |-
+    Dong-Uk Seo, \hyungtaelim, Eungchang Mason Lee, Hyunjun Lim, and Hyun Myung, ``Enhancing Robustness of Line Tracking Through Semi-Dense Epipolar Search in Line-based SLAM,'' in \textit{Proc. IEEE/RSJ Int. Conf. Intell. Robot. Syst. (IROS)}, Detroit, U.S., Oct. 1--5, 2023, pp. 3483--3490.
+  - |-
+    \hyungtaelim, Lucas Nunes, Benedikt Mersch, Xieyuanli Chen, Jens Behley, Hyun Myung, and Cyrill Stachniss, ``ERASOR2: Instance-Aware Robust 3D Mapping of the Static World in Dynamic Scenes,'' in \textit{Robotics: Science and Systems~(RSS)}, Daegu, South Korea, Jul. 15--19, 2023.
+  - |-
+    \hyungtaelim, Daebeom Kim, Beomsoo Kim, and Hyun Myung, ``AdaLIO: Robust Adaptive LiDAR-Inertial Odometry in Degenerate Indoor Environments,'' in \textit{Proc. Int. Conf. Ubiquit. Robot. (UR)}, Hawaii, U.S., Jun. 25--28, 2023, pp. 48--53.
+  - |-
+    \hyungtaelim, Kawon Han, Gunhee Shin, Giseop Kim, Songcheol Hong, and Hyun Myung, ``ORORA: Outlier-Robust Radar Odometry,'' in \textit{Proc. IEEE Int. Conf. Robot. Automat. (ICRA)}, London, UK, May 29--Jun. 2, 2023, pp. 2046--2053.
+  - |-
+    Alex Junho Lee, \hyungtaelim, Minho Oh, Wonho Song, and Hyun Myung, ``Volumetric Vegetation Monitoring From LiDAR Scans With Ground Estimation,'' in \textit{Proc. Int. Conf. Control, Automat. Syst. (ICCAS)}, Busan, Republic of Korea, Nov. 27--Dec. 1, 2022, pp. 1378--1379.
+  - |-
+    \underline{Seungjae Lee}, \underline{\hyungtaelim}, and Hyun Myung, ``Patchwork++: Fast and Robust Ground Segmentation Solving Partial Under-Segmentation Using 3D point cloud,'' in \textit{Proc. IEEE/RSJ Int. Conf. Intell. Robot. Syst. (IROS)}, Kyoto, Japan, Oct. 22--27, 2022, pp. 13276--13283.
+  - |-
+    Sumin Hu, Yeeun Kim, \hyungtaelim, Alex Junho Lee, and Hyun Myung, ``eCDT: Event Clustering for Simultaneous Feature Detection and Tracking,'' in \textit{Proc. IEEE/RSJ Int. Conf. Intell. Robot. Syst. (IROS)}, Kyoto, Japan, Oct. 22--27, 2022, pp. 3808--3815.
+  - |-
+    \underline{Dong-Uk Seo}, \underline{\hyungtaelim}, Seungjae Lee, and Hyun Myung, ``PaGO-LOAM: Robust ground- optimized LiDAR odometry,'' in \textit{Proc. Int. Conf. Ubiquit. Robot. (UR)}, Jeju, Republic of Korea, Jul. 4--6, 2022, pp. 1--7.
+  - |-
+    \hyungtaelim, Suyong Yeon, Soohyun Ryu, Yonghan Lee, Youngji Kim, Jaeseong Yun, Euigon Jung, Donghwan Lee, and Hyun Myung, ``A Single Correspondence Is Enough: Robust Global Registration to Avoid Degeneracy in Urban Environments,'' in \textit{Proc. IEEE Int. Conf. Robot. Automat. (ICRA)}, Philadelphia, USA, May 23--27, 2022, pp. 8010--8017.
+  - |-
+    Sungwon Hwang, \hyungtaelim, and Hyun Myung, ``Equivariance-Bridged SO(2)-Invariant Representation Learning Using Graph Convolutional Network,'' in \textit{Proc. British Machine Vis. Conf. (BMVC)}, Virtual, Oct. 22--25, 2021.
+  - |-
+    Hyungyu Lee, Myeongwoo Jeong, Chanyoung Kim, \hyungtaelim, Changgue Park, Sungwon Hwang, and Hyun Myung, ``Low-level Pose Control of Tilting Multirotor for Wall Perching Tasks Using Reinforcement Learning,'' in \textit{Proc. IEEE/RSJ Int. Conf. Intell. Robot. Syst. (IROS)}, Prague, Czech Republic (Virtual), Sep. 27--Oct. 1, 2021, pp. 9669--9676.
+  - |-
+    Eungchang Mason Lee, Junho Choi, \hyungtaelim, and Hyun Myung, ``REAL: Rapid Exploration With Active Loop-Closing Toward Large-Scale 3D Mapping Using UAVs,'' in \textit{Proc. IEEE/RSJ Int. Conf. Intell. Robot. Syst. (IROS)}, Prague, Czech Republic (Virtual), Sep. 27--Oct. 1, 2021, pp. 4194--4198.
+  - |-
+    \hyungtaelim, Hyeonjae Gil, and Hyun Myung, ``MSDPN: Monocular Depth Prediction With Partial Laser Observation Using Multi-stage Neural Networks,'' in \textit{Proc. IEEE/RSJ Int. Conf. Intell. Robot. Syst. (IROS)}, Las Vegas, USA (Virtual), Oct. 24--Dec. 24, 2020, pp. 10750--10757.
+  - |-
+    \hyungtaelim, Sungwon Hwang, Sungjae Shin, and Hyun Myung, ``Normal Distributions Transform is Enough: Real-Time 3D Scan Matching for Pose Correction of Mobile Robot Under Large Odometry Uncertainties,'' in \textit{Proc. Int. Conf. Control, Automat. Syst. (ICCAS)}, Busan, Republic of Korea, Oct. 13--16, 2020, pp. 1155--1161, \textbf{Received Student Best Paper Award}.
+  - |-
+    \hyungtaelim, Changgue Park, and Hyun Myung, ``RONet: Real-Time Range-Only Indoor Localization via Stacked Bidirectional LSTM with Residual Attention,'' in \textit{Proc. IEEE/RSJ Int. Conf. Intell. Robot. Syst. (IROS)}, Macau, China, Nov. 4--8, 2019, pp. 3241--3247.
+  - |-
+    Jungmo Koo, Changgue Park, \hyungtaelim, and Hyung Myung, ``Light-Weight Deep Neural Networks for Multi-Target Classification,`` in \textit{Proc. Int. Conf. Control, Automat. Syst. (ICCAS)}, Jeju, Republic of Korea, Oct. 15--18, 2019.
+  - |-
+    Jieum Hyun, Taekjun Oh, \hyungtaelim, and Hyung Myung, ``UWB-Based Indoor Localization Using Ray-Tracing Algorithm,'' in \textit{Proc. Int. Conf. Ubiquit. Robot. (UR)}, Hawaii, USA, Jun. 24-27, 2019, pp. 98--101.
+  - |-
+    \hyungtaelim, Jungmo Koo, Jieum Hyun, and Hyung Myung, ``Effective Indoor Robot Localization by Stacked Bidirectional LSTM Using Beacon-Based Range Measurements,'' in \textit{Proc. Int. Conf. Robot Intell. Tech. Applications (RiTA)}, Putrajaya, Malaysia, Dec. 16-18, 2018, pp. 144--151.
+  - |-
+    \hyungtaelim, Jungmo Koo, Jieum Hyun, and Hyun Myung, ``Recurrent Neural Networks for Range-Based Indoor Robot Localization,'' in \textit{Proc. IEEE/RSJ Int. Conf. Intell. Robot. Syst. (IROS)}, Madrid, Spain, Oct. 1--5, 2018.
+

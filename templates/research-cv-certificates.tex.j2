@@ -1,0 +1,27 @@
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%
+% GENERATED FILE -- do not edit directly.
+% Edit ../cv-data.yaml and this file's template
+% (../templates/research-cv-certificates.tex.j2), then run
+% `python3 generate_cvs.py` from the repo root.
+%-------------------------------------------------------------------------------
+\cvsection{Certificates}
+
+
+%-------------------------------------------------------------------------------
+%	CONTENT
+%-------------------------------------------------------------------------------
+\begin{cvhonors}
+
+\BLOCK{ for c in certificates }
+%---------------------------------------------------------
+  \cvhonor
+    {\VAR{c.name}} % Name
+    {\VAR{c.issuer}} % Issuer
+    {\VAR{c.credential_id}} % Credential ID
+    {\VAR{c.date}} % Date(s)
+
+\BLOCK{ endfor }
+%---------------------------------------------------------
+\end{cvhonors}

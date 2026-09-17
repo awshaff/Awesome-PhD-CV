@@ -1,0 +1,27 @@
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%
+% GENERATED FILE -- do not edit directly.
+% Edit ../cv-data.yaml and this file's template
+% (../templates/research-cv-committees.tex.j2), then run
+% `python3 generate_cvs.py` from the repo root.
+%-------------------------------------------------------------------------------
+\cvsection{Academic Services}
+
+
+%-------------------------------------------------------------------------------
+%	CONTENT
+%-------------------------------------------------------------------------------
+\begin{cvhonors}
+
+%---------------------------------------------------------
+\BLOCK{ for c in committees }
+  \cvhonor
+    {\VAR{c.position}} % Position
+    {\VAR{c.committee}} % Committee
+    {\VAR{c.location}} % Location
+    {\VAR{c.date}} % Date(s)
+%---------------------------------------------------------
+\BLOCK{ endfor }
+
+\end{cvhonors}

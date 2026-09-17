@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
-"""Render all three CV templates from the single source of truth, cv-data.yaml.
+"""Render every CV file from the single source of truth, cv-data.yaml.
 
 Usage:
     python3 generate_cvs.py
 
 Edit cv-data.yaml, re-run this script, then compile each CV as usual
-(pdflatex/xelatex/latexmk in its own directory). Content that is unique to
-one template (research-cv's grant list, publications, teaching, committees,
-etc.) is not touched by this script -- it stays hand-authored.
+(pdflatex/xelatex/latexmk in its own directory). This covers content shared
+across templates (personal info, education, experience, honors, repos) and
+content only research-cv renders (grants, publications, teaching,
+committees, certificates, presentations, writing, skills). The one file this
+script does not touch is research-cv/cv/ref.bib -- see cv-data.yaml's
+comment above `publications:` for why.
 """
 import pathlib
 import yaml
@@ -24,6 +27,15 @@ OUTPUTS = {
     "research-cv-education.tex.j2": "research-cv/cv/education.tex",
     "research-cv-work_experience.tex.j2": "research-cv/cv/work_experience.tex",
     "research-cv-honors.tex.j2": "research-cv/cv/honors.tex",
+    "research-cv-research_project_experience.tex.j2": "research-cv/cv/research_project_experience.tex",
+    "research-cv-teaching.tex.j2": "research-cv/cv/teaching.tex",
+    "research-cv-committees.tex.j2": "research-cv/cv/committees.tex",
+    "research-cv-certificates.tex.j2": "research-cv/cv/certificates.tex",
+    "research-cv-presentation.tex.j2": "research-cv/cv/presentation.tex",
+    "research-cv-writing.tex.j2": "research-cv/cv/writing.tex",
+    "research-cv-skills.tex.j2": "research-cv/cv/skills.tex",
+    "research-cv-publication_conf.tex.j2": "research-cv/cv/publication_conf.tex",
+    "research-cv-publication_journals.tex.j2": "research-cv/cv/publication_journals.tex",
 }
 
 

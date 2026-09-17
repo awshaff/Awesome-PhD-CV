@@ -14,29 +14,21 @@
 %-------------------------------------------------------------------------------
 \begin{cventries}
 
+\BLOCK{ for w in writing }
 %---------------------------------------------------------
   \cventry
-    {Founder \& Writer} % Role
-    {A Guide for Developers in Start-up} % Title
-    {Facebook Page} % Location
-    {Jan. 2015 - PRESENT} % Date(s)
+    {\VAR{w.role}} % Role
+    {\VAR{w.title}} % Title
+    {\VAR{w.location}} % Location
+    {\VAR{w.dates}} % Date(s)
     {
       \begin{cvitems} % Description(s)
-        \item {Drafted daily news for developers in Korea about IT technologies, issues about start-up.}
+\BLOCK{ for bullet in w.bullets }
+        \item {\VAR{bullet}}
+\BLOCK{ endfor }
       \end{cvitems}
     }
 
-%---------------------------------------------------------
-  \cventry
-    {Undergraduate Student Reporter} % Role
-    {AhnLab} % Title
-    {S.Korea} % Location
-    {Oct. 2012 - Jul. 2013} % Date(s)
-    {
-      \begin{cvitems} % Description(s)
-        \item {Drafted reports about IT trends and Security issues on AhnLab Company magazine.}
-      \end{cvitems}
-    }
-
+\BLOCK{ endfor }
 %---------------------------------------------------------
 \end{cventries}

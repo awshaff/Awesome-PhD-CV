@@ -14,30 +14,12 @@
 %-------------------------------------------------------------------------------
 \begin{cvskills}
 
+\BLOCK{ for s in research_cv_skills }
 %---------------------------------------------------------
   \cvskill
-    {DevOps} % Category
-    {AWS, Docker, Kubernetes, Rancher, Vagrant, Packer, Terraform, Jenkins, CircleCI} % Skills
+    {\VAR{s.category}} % Category
+    {\VAR{s['items'] | join(", ")}} % Skills
 
-%---------------------------------------------------------
-  \cvskill
-    {Back-end} % Category
-    {Koa, Express, Django, REST API} % Skills
-
-%---------------------------------------------------------
-  \cvskill
-    {Front-end} % Category
-    {Hugo, Redux, React, HTML5, LESS, SASS} % Skills
-
-%---------------------------------------------------------
-  \cvskill
-    {Programming} % Category
-    {Node.js, Python, JAVA, OCaml, LaTeX} % Skills
-
-%---------------------------------------------------------
-  \cvskill
-    {Languages} % Category
-    {Korean, English, Japanese} % Skills
-
+\BLOCK{ endfor }
 %---------------------------------------------------------
 \end{cvskills}

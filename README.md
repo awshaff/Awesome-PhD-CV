@@ -77,14 +77,15 @@ ______________________________________________________________________
 
 ## :recycle: Keeping All Three CVs in Sync
 
-Your name, contact links, education, work history, honors, and open-source
-portfolio are the same facts no matter which template renders them — so they
-live in one place, [`cv-data.yaml`](cv-data.yaml), instead of being copy-pasted
-into three `.tex` files.
+All of your CV content — personal info, education, work history, honors,
+open-source portfolio, and everything research-cv alone renders (grants,
+publications, teaching, committees, certificates, presentations, writing,
+skills) — lives in one file, [`cv-data.yaml`](cv-data.yaml), instead of being
+hand-maintained across `.tex` files.
 
 **Workflow:**
-1. Edit [`cv-data.yaml`](cv-data.yaml) (new job, updated star count, a new award, a fixed date, etc.).
-2. Regenerate all three `.tex` files:
+1. Edit [`cv-data.yaml`](cv-data.yaml) (new job, updated star count, a new award, a new publication, a fixed date, etc.).
+2. Regenerate every generated `.tex` file:
    ```bash
    python3 generate_cvs.py
    ```
@@ -92,14 +93,26 @@ into three `.tex` files.
 
 The generator (`generate_cvs.py`) renders the Jinja2 templates in `templates/`
 into `jakes-format/resume.tex`, `deedy-format/resume.tex`, `research-cv/cv.tex`,
-and `research-cv/cv/{education,work_experience,honors}.tex`. Those six files
-are marked `GENERATED FILE -- do not edit directly` at the top — edit the
-`.yaml` and the `.j2` templates instead, then regenerate.
+and every file under `research-cv/cv/` except `ref.bib` (a stale, unused
+duplicate of the publication list — both `\bibliographystyle` and
+`\nobibliography` are commented out in `cv.tex`, and its entries disagree with
+the live list, e.g. a paper marked "submitted" there is already published in
+`cv-data.yaml`). Every generated file is marked `GENERATED FILE -- do not
+edit directly` at the top — edit the `.yaml` and the `.j2` templates instead,
+then regenerate.
 
-**What's *not* in the SSoT:** content unique to one template (research-cv's
-detailed grant list, publications/`ref.bib`, teaching, committees, etc.) stays
-hand-authored in its own file, since it isn't duplicated anywhere else. Each
-industry resume's "Selected/Key Relevant Projects" section still has a
+**Note:** `certificates`, `presentations`, `writing`, and `research_cv_skills`
+in `cv-data.yaml` were migrated verbatim from `cv/certificates.tex`,
+`cv/presentation.tex`, `cv/writing.tex`, and `cv/skills.tex` — but those four
+`\input` lines are already commented out in `cv.tex`, and their content
+(AWS/Kubernetes certs, a 2012 DEFCON talk, a 2012–2015 dev blog, a DevOps
+skill list) doesn't match the robotics-researcher narrative elsewhere in this
+repo. It looks like unmodified example content from the upstream
+[posquit0/Awesome-CV](https://github.com/posquit0/Awesome-CV) template. Kept
+for now since it's real data that existed in the repo — worth deciding
+whether to keep, edit, or delete.
+
+Each industry resume's "Selected/Key Relevant Projects" section still has a
 placeholder block meant to be customized per job application — that's
 intentionally not data-driven.
 
