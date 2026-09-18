@@ -8,21 +8,22 @@
 # =============================================================================
 
 personal:
-  first_name: Hyungtae
-  last_name: Lim
-  full_name: Hyungtae Lim
-  email: shapelim@mit.edu
-  homepage_url: https://limhyungtae.github.io/hyungtae-lim/
-  homepage_display: limhyungtae.github.io
-  github_id: limhyungtae
-  github_url: https://github.com/limhyungtae
-  linkedin_id: hyungtae-lim
-  linkedin_url: https://linkedin.com/in/hyungtae-lim
-  googlescholar_id: S1A3nbIAAAAJ
-  googlescholar_url: https://scholar.google.com/citations?user=S1A3nbIAAAAJ
-  address: Cambridge, MA, USA
-  position: "Robotics Researcher{\\enskip\\cdotp\\enskip}Field Robotics Engineer"
-  quote: "``Towards Pervasive Robotics and Artificial Intelligence''"
+  first_name: Abdurrahman
+  middle_name: Wachid
+  last_name: Shaffar
+  full_name: Abdurrahman Wachid Shaffar
+  email: abdurrahman@shaffar.com
+  homepage_url: https://shaffar.com
+  homepage_display: shaffar.com
+  github_id: awshaff
+  github_url: https://github.com/awshaff
+  linkedin_id: awachid
+  linkedin_url: https://linkedin.com/in/awachid
+  googlescholar_id: ATQK5gcAAAAJ
+  googlescholar_url: https://scholar.google.com/citations?user=ATQK5gcAAAAJ
+  address: Suwon-si, Gyeonggi-do, Republic of Korea
+  position: "Quantum Research Engineer{\\enskip\\cdotp\\enskip}Applied RnD Engineer"
+  quote: "``Toward Quantum-Enhanced Solutions for Industry Challenges''"
 
 # Open-source repos. `portfolio_description` + `venue` mark the "core portfolio"
 # projects that appear in jakes/deedy's project sections and research-cv's
@@ -78,34 +79,27 @@ repos:
 
 skills:
   programming: [C++, Python, CUDA, CMake]
-  tools: [ROS/ROS2, PyTorch, OpenCV, Git, Docker]
-  research_areas: [SLAM, 3D LiDAR, Point Cloud Registration, Ground Segmentation, Semantic Segmentation, Sensor Fusion, Deep Learning, Multi-Robot Mapping]
-  languages: [Korean (Native), English (Fluent)]
+  tools: [Qiskit, QuTIP, Git, Docker]
+  research_areas: [Quantum Microwave Communication, Continuous-Variable Quantum Information, Entanglement Distribution, Rydberg Atomic Receivers, Wireless Communication Systems, Quantum-Classical System Modeling]
+  languages: [Indonesian (Native), English (Proficient), Korean (Basic)]
 
 education:
-  - degree: Ph.D. in Electrical Engineering and Robotics Program
-    institution: Korea Advanced Institute of Science and Technology (KAIST)
-    location_full: Daejeon, Republic of Korea
-    location_short: Daejeon, South Korea
-    start: Mar. 2020
-    end: Feb. 2023
-    advisor: {name: Prof. Hyun Myung, url: "https://urobot.kaist.ac.kr/url_teams/prof-hyunmyung/"}
-    dissertation: {title: "Robust LiDAR SLAM for Autonomous Vehicles Leveraging Ground Segmentation", pdf_url: "https://www.dropbox.com/s/0j64sbsrhpyjdgm/hyungtae_lim_dissertation.pdf?dl=0"}
-  - degree: M.S. in Electrical Engineering and Robotics Program
-    institution: Korea Advanced Institute of Science and Technology (KAIST)
-    location_full: Daejeon, Republic of Korea
-    location_short: Daejeon, South Korea
-    start: Mar. 2018
-    end: Feb. 2020
-    advisor: {name: Prof. Hyun Myung, url: "https://urobot.kaist.ac.kr/url_teams/prof-hyunmyung/"}
-    dissertation: {title: "Two-Stage Depth Prediction Using a 2D LiDAR and a Monocular Camera via Deep Learning"}
-  - degree: B.S. in Mechanical Engineering
-    institution: Korea Advanced Institute of Science and Technology (KAIST)
-    location_full: Daejeon, Republic of Korea
-    location_short: Daejeon, South Korea
-    start: Mar. 2013
-    end: Aug. 2018
-    note: "Listed on the Dean’s List in Mechanical Engineering, KAIST (GPA 4.23/4.3 for the semester) - Fall 2015"
+  - degree: Ph.D. in Electronics and Information Convergence Engineering
+    institution: Kyung Hee University (KHU)
+    location_full: Yongin, Republic of Korea
+    location_short: Yongin, South Korea
+    start: Mar. 2022
+    end: Feb. 2028
+    advisor: {name: Prof. Hyundong Shin, url: "https://cqilab.khu.ac.kr/people/"}
+    dissertation: {title: "Quantum Microwave Communication", pdf_url: ""}
+  - degree: B.S. in Physics
+    institution: Universitas Gadjah Mada (UGM)
+    location_full: Yogyakarta, Republic of Indonesia
+    location_short: Yogyakarta, Indonesia
+    start: Aug, 2015
+    end: Nov. 2019
+    advisor: {name: Prof. Pekik Nurwantoro, url: "https://acadstaff.ugm.ac.id/pekiknurwantoro"}
+    dissertation: {title: "Quantum Mechanics Implementation in Quantum Cryptography"}
 
 # `industry` = shown on jakes/deedy resumes. `resume_bullets` is the single
 # wording used by BOTH jakes and deedy (previously they'd drifted apart).
