@@ -581,8 +581,14 @@ research_cv_skills:
 # \nobibliography are commented out in cv.tex, and the entries disagree with
 # the list below, e.g. Quatro++ is "submitted" there but published here).
 # Left untouched rather than reconciled since nothing renders it; worth a
-# decision on whether to delete it.
+# decision on whether to delete it. cv/publications.tex (the section wrapper)
+# also had a trailing commented-out block of \bibentry{...} calls -- the old
+# citation mechanism ref.bib fed, superseded by the plain-text lists below.
+# Dropped rather than regenerated for the same reason as ref.bib: it's dead
+# code for an abandoned mechanism, not new information (same publications,
+# just via the old renderer).
 publications:
+  note: "\\underline{Underline} denotes co-first authors or co-corresponding authors"
   journals:
   - |-
     \underline{\hyungtaelim}, \underline{Minkyun Seo}, Luca Carlone, and Jaesik Park, ``Towards Zero-Shot Point Cloud Registration Across Diverse Scales, Scenes, and Sensor Setups,'' in \textit{IEEE Trans. Pattern Anal. Mach. Intell. (T-PAMI)}, 2026. \underreview
@@ -682,3 +688,71 @@ publications:
   - |-
     \hyungtaelim, Jungmo Koo, Jieum Hyun, and Hyun Myung, ``Recurrent Neural Networks for Range-Based Indoor Robot Localization,'' in \textit{Proc. IEEE/RSJ Int. Conf. Intell. Robot. Syst. (IROS)}, Madrid, Spain, Oct. 1--5, 2018.
 
+
+# Summary/bio section (research-cv/cv/aboutme.tex). NOTE: this file defines
+# \lineintv as \vspace{0.0cm} with its own comment "% Not in use" -- a
+# confirmed no-op -- and mixes inconsistent {...} grouping around otherwise
+# plain-text bullets (which renders identically with or without the braces).
+# Both are dropped here as dead formatting cruft; the template emits plain
+# \item lines, which compiles to the same output.
+research_cv_summary:
+  paragraph: |-
+    A robotics researcher focused on robust perception, state estimation for mobile robots, and lifelong mapping technologies essential for robotic navigation.
+    Studying algorithms that are robust to dynamic objects and outliers, with the goal of achieving generalization in real-world environments.
+    An enthusiast of open-source research, aiming to help others and contribute to the advancement of the robotics community.
+    Currently, a postdoctoral associate at the \href{https://web.mit.edu/sparklab/people.html}{SPARK Lab at MIT}.
+    Previously worked as a postdoctoral fellow at the \href{https://urobot.kaist.ac.kr/}{Urban Robotics Lab at KAIST}, Republic of Korea,
+    visiting scholar at \href{https://www.ipb.uni-bonn.de/}{StachnissLab, Univ. Bonn} in Germany, and research intern at \href{https://www.naverlabs.com/}{NAVER LABS}, Republic of Korea.
+  highlights:
+    - text: "Published across top-tier venues in robotics (IEEE/RSJ IROS, IEEE ICRA, IEEE RA-L, RSS, IEEE T-RO, IJRR), autonomous driving (IEEE IV, IEEE T-IV), and artificial intelligence (CVPR, ICCV, AAAI, NeurIPS, IEEE T-PAMI)."
+    - text: "Always pursue \\textit{clean, useful, reproducible} code to support the community:"
+      subitems:
+        - |-
+          e.g., Maintainer of \href{https://github.com/MIT-SPARK/TEASER-plusplus}{TEASER++ \githubstars{2,100}} and \href{https://github.com/MIT-SPARK/Hydra}{Hydra \githubstars{773}} \& publisher of \href{https://github.com/url-kaist/patchwork-plusplus}{Patchwork++ \githubstars{842}} and \href{https://github.com/LimHyungTae/patchwork}{Patchwork \githubstars{555}}, \\ \href{https://github.com/MIT-SPARK/KISS-Matcher}{KISS-Matcher \githubstars{643}}, \href{https://github.com/MIT-SPARK/VGGT-SLAM}{VGGT-SLAM \githubstars{882}}, \href{https://github.com/LimHyungTae/ERASOR}{ERASOR \githubstars{494}}, and \href{https://github.com/MIT-SPARK/BUFFER-X}{BUFFER-X \githubstars{243}}
+    - text: "Academic honors \\& awards:"
+      subitems:
+        - "IEEE ICRA 2025 Outstanding Reviewer Award (Selected as one of only 5 awardees out of 7,641 reviewers)"
+        - |-
+          \href{https://sites.google.com/view/rsspioneers2024/participants}{RSS Pioneers 2024} (Out of 202 candidates, only 30 researchers were selected)
+        - "2022 IEEE RA-L Best Paper Award (among 1,100 papers, only 5 papers were selected)"
+    - text: "Won multiple SLAM challenges and competitions while pursuing technologies for real-world applications:"
+      subitems:
+        - |-
+          1st prize again in the \href{https://construction-robots.github.io/\#challenge}{HILTI SLAM Challenge'24 in IEEE ICRA}
+        - |-
+          1st prize in \href{https://hilti-challenge.com/}{HILTI SLAM Challenge'23 in IEEE ICRA} among 63 international teams
+        - |-
+          2nd cash prize in \href{https://hilti-challenge.com/}{HILTI SLAM Challenge'22 in IEEE ICRA} (in total, 4th place)
+        - |-
+          1st prize in \href{https://hitachi-lg.com/}{Hitachi-LG Data Storage} LiDAR application competition, Republic of Korea
+        - |-
+          Received \href{https://www.ces.tech/innovation-awards/honorees/2023/honorees/h/hi-bot-hologram-image-guide-robot.aspx}{CES'23 innovation award} through technology transfer on SLAM for mobile robots (collaborated with HILLS Robotics)
+    - text: "Professional experience:"
+      subitems:
+        - |-
+          Postdoctoral associate of Laboratory for Information \& Decision Systems (LIDS), MIT (advisor: \href{https://lucacarlone.mit.edu/}{Prof. Luca Carlone})
+        - |-
+          Visiting scholar of Univ. Bonn, Germany (advisor: \href{https://www.ipb.uni-bonn.de/people/cyrill-stachniss/index.html}{Prof. Cyrill Stachniss})
+        - "In 2022, served as a SLAM part outside expert, CTO division of LG Electronics, Republic of Korea"
+        - |-
+          Research intern in vision/deep learning team at \href{https://www.naverlabs.com/}{NAVER LABS}, Republic of Korea
+  research_interests_intro: "My research interests include, but are not confined to:"
+  research_interests:
+    - SLAM using LiDAR, camera, or radar sensors
+    - Scene graph-based mapping
+    - Robust 3D point cloud registration
+    - Mobile robotics including autonomous vehicles and quadruped robots
+    - Deep learning-based approaches that aid in perceiving the surroundings from the robot's perspective
+    - Geometry-based instance segmentation and perception for traversability estimation
+    - Localization including visual localization, including visual place recognition
+    - Static map building and moving object segmentation
+    - Robust visual(-inertial) and LiDAR(-inertial) odometry
+    - Lifelong SLAM and continual mapping for long-term autonomy
+    - Spatio-temporal scene understanding
+    - Multi-session and multi-agent SLAM
+    - Uncertainty-aware state estimation and map maintenance
+  # Commented out (disabled) in the original -- a real past research topic
+  # (his earlier UAV airspeed-estimation papers), not a draft, so kept here
+  # rather than dropped.
+  research_interests_disabled:
+    - Analytical redundancy

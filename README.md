@@ -78,10 +78,11 @@ ______________________________________________________________________
 ## :recycle: Keeping All Three CVs in Sync
 
 All of your CV content — personal info, education, work history, honors,
-open-source portfolio, and everything research-cv alone renders (grants,
-publications, teaching, committees, certificates, presentations, writing,
-skills) — lives in one file, [`cv-data.yaml`](cv-data.yaml), instead of being
-hand-maintained across `.tex` files.
+open-source portfolio, and everything research-cv alone renders (summary/bio,
+grants, publications, teaching, committees, certificates, presentations,
+writing, skills) — lives in one file, [`cv-data.yaml`](cv-data.yaml), instead
+of being hand-maintained across `.tex` files. Every file under
+`research-cv/cv/` is generated from it except `ref.bib` (see below).
 
 **Workflow:**
 1. Edit [`cv-data.yaml`](cv-data.yaml) (new job, updated star count, a new award, a new publication, a fixed date, etc.).
