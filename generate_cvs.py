@@ -24,6 +24,7 @@ OUTPUTS = {
     "jakes-resume.tex.j2": "jakes-format/resume.tex",
     "deedy-resume.tex.j2": "deedy-format/resume.tex",
     "research-cv.tex.j2": "research-cv/cv.tex",
+    "research-cv-aboutme.tex.j2": "research-cv/cv/aboutme.tex",
     "research-cv-education.tex.j2": "research-cv/cv/education.tex",
     "research-cv-work_experience.tex.j2": "research-cv/cv/work_experience.tex",
     "research-cv-honors.tex.j2": "research-cv/cv/honors.tex",
@@ -36,6 +37,7 @@ OUTPUTS = {
     "research-cv-skills.tex.j2": "research-cv/cv/skills.tex",
     "research-cv-publication_conf.tex.j2": "research-cv/cv/publication_conf.tex",
     "research-cv-publication_journals.tex.j2": "research-cv/cv/publication_journals.tex",
+    "research-cv-publications.tex.j2": "research-cv/cv/publications.tex",
 }
 
 

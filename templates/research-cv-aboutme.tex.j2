@@ -1,0 +1,57 @@
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%
+% GENERATED FILE -- do not edit directly.
+% Edit ../cv-data.yaml (research_cv_summary) and this file's template
+% (../templates/research-cv-aboutme.tex.j2), then run
+% `python3 generate_cvs.py` from the repo root.
+%-------------------------------------------------------------------------------
+\cvsection{Summary}
+
+
+%-------------------------------------------------------------------------------
+%	CONTENT
+%-------------------------------------------------------------------------------
+\begin{cvparagraph}
+
+\VAR{research_cv_summary.paragraph}
+\end{cvparagraph}
+
+\newcommand{\lineintv}{\vspace{0.0cm}} % Not in use
+
+\cventry
+  {} % Degree
+  {Highlights\vspace{-0.3cm}} % Institution
+  {} % Location
+  {} % Date(s)
+  {
+    \begin{cvitems} % Description(s) bullet points
+\BLOCK{ for h in research_cv_summary.highlights }
+      \item \VAR{h.text}
+\BLOCK{ if h.subitems }
+        \begin{itemize}
+\BLOCK{ for sub in h.subitems }
+          \item \VAR{sub}
+\BLOCK{ endfor }
+        \end{itemize}
+\BLOCK{ endif }
+\BLOCK{ endfor }
+    \end{cvitems}
+  }
+
+
+\cventry
+  {\VAR{research_cv_summary.research_interests_intro}} % Degree
+  {Field of Interest}%\vspace{-0.3cm}} % Institution
+  {} % Location
+  {} % Date(s)
+  {
+    \begin{cvitems} % Description(s) bullet points
+\BLOCK{ for interest in research_cv_summary.research_interests }
+      \item {\VAR{interest}}
+\BLOCK{ endfor }
+\BLOCK{ for interest in research_cv_summary.research_interests_disabled }
+      % \item {\VAR{interest}}
+\BLOCK{ endfor }
+    \end{cvitems}
+  }
